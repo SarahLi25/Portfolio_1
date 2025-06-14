@@ -1,138 +1,258 @@
+/* CSS Variables and Reset */
 :root {
   --bg: #fff;
-  --text: #111;
-  --orange: #FFA500;
-  --yellow: #FFD700;
-  --blue: #1E90FF;
+  --text1: #111;
+  --text2: #fcf5e8;
+  --orange: #db6f3e;
+  --yellow: #e8a93f;
+  --brightblue: #1E90FF;
+  --green: #2c412d;
+  --pale-yellow: #FFFFCC;
+  --lightblue: #d6e7fd;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: "Segoe UI", sans-serif;
-  margin: 0;
-  padding: 0;
   background-color: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
+  color: var(--text1);
 }
 
-header {
+/* Side Navigation */
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  height: 2rem;
+  width: 2rem;
   background-color: var(--orange);
-  padding: 1rem 2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1001;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
-.nav {
+.nav-toggle-label span {
+  display: block;
+  width: 1.2rem;
+  height: 0.2rem;
+  background: white;
   position: relative;
 }
 
-.menu-toggle {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: '';
+  position: absolute;
+  width: 1.2rem;
+  height: 0.2rem;
+  background: white;
 }
 
-.menu {
-  display: none;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background: var(--orange);
+.nav-toggle-label span::before {
+  top: -0.4rem;
+}
+
+.nav-toggle-label span::after {
+  top: 0.4rem;
+}
+
+.side-nav {
+  position: fixed;
+  right: -250px;
+  top: 0;
+  height: 100vh;
+  width: 250px;
+  background-color: var(--pale-yellow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 4rem;
+  transition: right 0.3s ease-in-out;
   z-index: 1000;
 }
 
-.menu li {
-  border-bottom: 1px solid #fff;
-}
-
-.menu li a {
-  display: block;
-  padding: 0.75rem 1.5rem;
-  color: white;
+.side-nav a {
+  margin: 1rem 0;
+  color: var(--green);
+  font-weight: bold;
   text-decoration: none;
+  font-size: 1.2rem;
 }
 
-.menu li a:hover {
-  background-color: var(--yellow);
-  color: black;
+.nav-toggle:checked + .nav-toggle-label + .side-nav {
+  right: 0;
 }
 
-.section {
-  padding: 2rem;
-  max-width: 900px;
-  margin: auto;
+/* Sections */
+section {
+  padding: 6rem 5vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  flex-wrap: wrap;
+  position: relative;
 }
 
-.section h2 {
-  border-bottom: 3px solid var(--orange);
-  padding-bottom: 0.5rem;
+.section-text {
+  flex: 1 1 45%;
+}
+
+.section-text h2 {
+  font-size: 2.5rem;
   margin-bottom: 1rem;
-}
-
-.skills-box {
-  background: #f5f5f5;
-  padding: 1rem;
-  border-left: 5px solid var(--orange);
-  margin-top: 1rem;
-}
-
-.contact-list {
-  list-style: none;
-  padding: 0;
-}
-
-.contact-list li a {
-  color: var(--blue);
-  text-decoration: none;
+  color: var(--text1);
   font-weight: bold;
 }
 
+.section-text p {
+  font-size: 1.3rem;
+  line-height: 1.6;
+}
+
+.section-image {
+  flex: 1 1 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-image img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Unique Section Styles */
+.landing {
+  background-color: var(--pale-yellow);
+  flex-direction: column;
+  text-align: center;
+}
+
+.landing .section-text h2 {
+  color: var(--orange);
+  font-size: 3rem;
+}
+
+.about {
+  background-color: var(--green);
+  color: var(--text2);
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.about .section-text h2 {
+  color: var(--yellow);
+}
+
+.education {
+  background-color: var(--orange);
+  color: var(--text2);
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.education .section-image {
+  margin-top: 2rem;
+}
+
+.experience {
+  background-color: var(--brightblue);
+  color: var(--text2);
+  flex-direction: row;
+  text-align: left;
+  position: relative;
+  clip-path: polygon(0 0, 100% 5%, 100% 95%, 0% 100%);
+  z-index: 1;
+}
+
+.projects {
+  background-color: var(--yellow);
+  flex-direction: column-reverse;
+  text-align: center;
+}
+
+.projects .section-image {
+  margin-bottom: 2rem;
+}
+
+.future {
+  background-color: var(--lightblue);
+  flex-direction: row-reverse;
+  text-align: left;
+  position: relative;
+  clip-path: ellipse(75% 100% at 50% 0%);
+}
+
+.interests {
+  background-color: var(--pale-yellow);
+  flex-direction: column;
+  text-align: left;
+  gap: 2rem;
+}
+
+.contact {
+  background-color: var(--green);
+  color: var(--text2);
+  flex-direction: column;
+  text-align: center;
+}
+
+/* Overlapping Image Box */
+.overlap-image {
+  position: absolute;
+  top: calc(100vh * 2 - 200px); /* Slightly above experience */
+  right: 2vw;
+  width: 250px;
+  z-index: 2;
+}
+
+.overlap-image img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Footer */
 footer {
   text-align: center;
-  padding: 1rem;
-  background: #eee;
-  font-size: 0.9rem;
-}
-
-.dark-toggle {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
-/* --- DARK MODE OVERRIDES --- */
-body.dark-mode {
-  --bg: #1a1a1a;
-  --text: #f0f0f0;
+  padding: 1.5rem;
   background-color: var(--bg);
-  color: var(--text);
+  color: var(--text1);
+  font-size: 0.9rem;
+  border-top: 1px solid #ccc;
 }
 
-body.dark-mode .section h2 {
-  border-bottom-color: var(--orange);
-  color: var(--yellow);
+.overlap-image {
+  position: absolute;
+  right: 5vw;
+  top: calc(100vh * 3 - 120px); /* After 3 sections (landing, about, education) */
+  width: 300px;
+  z-index: 5;
 }
 
-body.dark-mode header {
-  background-color: var(--blue);
-}
-
-body.dark-mode .nav a {
-  color: white;
-}
-
-body.dark-mode .skills-box {
-  background: #2a2a2a;
-  border-color: var(--yellow);
-  color: #f0f0f0;
-}
-
-body.dark-mode .contact-list a {
-  color: var(--yellow);
+.overlap-image img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  object-fit: cover;
 }

@@ -2,98 +2,114 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sarah Li Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio Website</title>
   <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
 </head>
 <body>
-  <header>
-    <h1>Sarah Li</h1>
-    <button class="dark-toggle" aria-label="Toggle Dark Mode">🌙</button>
-    <nav class="nav">
-      <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
-      <ul class="menu">
-        <li><a href="#about">About</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#future">Future</a></li>
-        <li><a href="#interests">Interests</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <main>
-    <section id="about" class="section">
+  <!-- Side Navigation -->
+  <input type="checkbox" class="nav-toggle" id="nav-toggle">
+  <label for="nav-toggle" class="nav-toggle-label">
+    <span></span>
+  </label>
+  <nav class="side-nav">
+    <a href="#landing">Home</a>
+    <a href="#about">About Me</a>
+    <a href="#education">Education</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#future">Future</a>
+    <a href="#interests">Interests</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Sections -->
+  <section id="landing" class="landing">
+    <div class="section-text">
+      <h2>Welcome to My Portfolio</h2>
+      <p>Text</p>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="section-text">
       <h2>About Me</h2>
-      <p>Hi! I'm Sarah Li, a passionate student interested in STEM, design, and helping others. I'm currently exploring computer science and community impact projects while balancing school, leadership roles, and personal interests.</p>
-    </section>
+      <p>Text</p>
+    </div>
+    <div class="section-image">
+      <img src="placeholder.jpg" alt="About Me Image" />
+    </div>
+  </section>
 
-    <section id="education" class="section">
+  <section id="education" class="education">
+    <div class="section-text">
       <h2>Education</h2>
-      <ul>
-        <li>High School Class of 2027</li>
-        <li>Advanced coursework in STEM and foreign languages</li>
-        <li>ABRSM Piano (Grade 7)</li>
-      </ul>
-    </section>
+      <p>Text</p>
+    </div>
+    <div class="section-image">
+      <img src="placeholder.jpg" alt="Education Image" />
+    </div>
+  </section>
 
-    <section id="experience" class="section">
+  <!-- Overlapping Image -->
+  <div class="overlap-image">
+    <img src="https://media.istockphoto.com/id/866279356/vector/leather-folder-for-cash-coins-and-cashier-check.jpg?s=612x612&w=0&k=20&c=mKa3MQCYFY4yyhSTmVv1JrQhNMa6J29hvsT3cSTcbfI=" alt="Overlapping Visual" />
+  </div>
+
+  <section id="experience" class="experience">
+    <div class="section-text">
       <h2>Experience</h2>
-      <ul>
-        <li>Class Officer & Student Council Member</li>
-        <li>Nextech Internship (2025)</li>
-        <li>Cybersecurity Summer Immersion Program</li>
-      </ul>
-    </section>
+      <p>Text</p>
+    </div>
+    <div class="section-image">
+      <img src="placeholder.jpg" alt="Experience Image" />
+    </div>
+  </section>
 
-    <section id="projects" class="section">
+  <section id="projects" class="projects">
+    <div class="section-text">
       <h2>Projects</h2>
-      <p>Featured Portfolio Projects:</p>
-      <ul>
-        <li>Digital Journal Reward System</li>
-        <li>Safe Sun Tanning App</li>
-        <li>Community Tech Access Initiative</li>
-      </ul>
-    </section>
+      <p>Text</p>
+    </div>
+    <div class="section-image">
+      <img src="placeholder.jpg" alt="Projects Image" />
+    </div>
+  </section>
 
-    <section id="future" class="section">
-      <h2>Future</h2>
-      <p>I plan to pursue computer science in college, continue developing accessible tools for students, and expand my creative and technical portfolio through internships and self-driven learning.</p>
-    </section>
+  <section id="future" class="future">
+    <div class="section-text">
+      <h2>Future Goals</h2>
+      <p>Text</p>
+    </div>
+    <div class="section-image">
+      <img src="placeholder.jpg" alt="Future Image" />
+    </div>
+  </section>
 
-    <section id="interests" class="section">
+  <section id="interests" class="interests">
+    <div class="section-text">
       <h2>Interests</h2>
-      <ul>
-        <li>Music (Piano)</li>
-        <li>Language & Culture (Chinese, Spanish)</li>
-        <li>Technology & Design</li>
-        <li>Community Outreach & Leadership</li>
-      </ul>
+      <p>Text</p>
+    </div>
+    <div class="section-image">
+      <img src="placeholder.jpg" alt="Interests Image" />
+    </div>
+  </section>
 
-      <div class="skills-box">
-        <h3>Technical Skills – Simple Cheese Pizza 🍕</h3>
-        <p><strong>Dough:</strong> HTML<br>
-           <strong>Sauce:</strong> CSS<br>
-           <strong>Cheese:</strong> JavaScript</p>
-        <p>Who doesn't love a simple cheese pizza?</p>
-      </div>
-    </section>
-
-    <section id="contact" class="section">
+  <section id="contact" class="contact">
+    <div class="section-text">
       <h2>Contact</h2>
-      <ul class="contact-list">
-        <li><a href="mailto:sarahlixx@email.com">📧 Email Me</a></li>
-        <li><a href="https://github.com/sarahlixx">💻 GitHub</a></li>
-      </ul>
-    </section>
+      <p>Text</p>
+    </div>
+    <div class="section-image">
+      <img src="placeholder.jpg" alt="Contact Image" />
+    </div>
+  </section>
 
-    <footer>
-      <p>Visitor Counter:</p>
-      <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://yourdomain.com&count_bg=%2374C0FC&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=visits&edge_flat=false" alt="visitor counter">
-    </footer>
-  </main>
+  <footer>
+    <p>&copy; 2025 Your Name</p>
+  </footer>
 </body>
 </html>
+
