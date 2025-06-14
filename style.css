@@ -167,8 +167,6 @@ section {
   color: var(--text2);
   flex-direction: column;
   text-align: center;
-  position: relative;
-  z-index: 1;
 }
 
 .education .section-image {
@@ -180,9 +178,6 @@ section {
   color: var(--text2);
   flex-direction: row;
   text-align: left;
-  position: relative;
-  clip-path: polygon(0 0, 100% 5%, 100% 95%, 0% 100%);
-  z-index: 1;
 }
 
 .projects {
@@ -199,8 +194,6 @@ section {
   background-color: var(--lightblue);
   flex-direction: row-reverse;
   text-align: left;
-  position: relative;
-  clip-path: ellipse(75% 100% at 50% 0%);
 }
 
 .interests {
@@ -217,21 +210,6 @@ section {
   text-align: center;
 }
 
-/* Overlapping Image Box */
-.overlap-image {
-  position: absolute;
-  top: calc(100vh * 2 - 200px); /* Slightly above experience */
-  right: 2vw;
-  width: 250px;
-  z-index: 2;
-}
-
-.overlap-image img {
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-}
-
 /* Footer */
 footer {
   text-align: center;
@@ -242,10 +220,11 @@ footer {
   border-top: 1px solid #ccc;
 }
 
+/* Overlapping Image */
 .overlap-image {
   position: absolute;
   right: 5vw;
-  top: calc(100vh * 3 - 120px); /* After 3 sections (landing, about, education) */
+  top: calc(100vh * 3 - 120px);
   width: 300px;
   z-index: 5;
 }
