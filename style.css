@@ -1,3 +1,5 @@
+/*make theme*/
+
 /* color scheme */
 :root {
   --bg: #fff;
@@ -23,6 +25,15 @@ body {
   background-color: var(--bg);
   color: var(--text1);
 }
+
+body {
+  font-family: 'Nunito', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
 
 /* Side Navigation */
 .nav-toggle {
@@ -136,7 +147,6 @@ section {
   max-width: 600px;
   border-radius: 12px;
   object-fit: cover;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* Unique Section Styles */
@@ -146,31 +156,49 @@ section {
   text-align: center;
 }
 
+.landing-image img {
+  width: 100%;
+  max-width: 250px;
+  justify-content: center;
+}
+
 .landing .section-text h2 {
   color: var(--orange);
   font-size: 3rem;
 }
 
 .about {
+  display: flex;
   background-color: var(--green);
   color: var(--text2);
+  padding: 6rem 5vw;
   flex-direction: row-reverse;
-  text-align: right;
+  align-items: center;
 }
-
+ 
 .about .section-text h2 {
   color: var(--yellow);
+  text-align: center;
 }
+
+.about .section-text p{
+  width: 65%;
+  margin: 0 auto;
+  text-align: left;
+}
+
 
 .education {
   background-color: var(--orange);
   color: var(--text2);
-  flex-direction: column;
-  text-align: center;
+  flex-direction: row;
+  text-align: left;
+ 
 }
 
 .education .section-image {
   margin-top: 2rem;
+  align-items: left;
 }
 
 .experience {
@@ -220,18 +248,31 @@ footer {
   border-top: 1px solid #ccc;
 }
 
-/* Overlapping Image */
-.overlap-image {
+/* Overlapping Images */
+.overlap-check {
   position: absolute;
-  right: 5vw;
-  top: calc(100vh * 3 - 120px);
-  width: 300px;
-  z-index: 5;
+  right: 0;
+  top: 1460px;
+  width: 550px;
+  z-index: 10;
 }
 
-.overlap-image img {
+.overlap-check img {
   width: 100%;
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  object-fit: cover;
+}
+
+.overlap-pizza {
+  position: absolute;
+  left: 500px;
+  top: 1800px;
+  width: 500px;
+  z-index: 11
+}
+
+.overlap-pizza img {
+  width: 100%;
+  border-radius: 12px;
   object-fit: cover;
 }
