@@ -210,8 +210,11 @@ section {
 
 .projects {
   background-color: var(--yellow);
-  flex-direction: column-reverse;
   text-align: center;
+}
+
+.projects h2{
+  margin-top: -100px;
 }
 
 /* Create two equal columns that sits next to each other */
