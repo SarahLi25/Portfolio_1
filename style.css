@@ -214,9 +214,17 @@ section {
   text-align: center;
 }
 
-.projects .section-image {
-  margin-bottom: 2rem;
+/* Create two equal columns that sits next to each other */
+.grid-container {
+  flex: 50%;
+  padding: 0 4px;
 }
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+}
+
 
 .future {
   background-color: var(--lightblue);
@@ -236,6 +244,10 @@ section {
   color: var(--text2);
   flex-direction: column;
   text-align: center;
+}
+
+.contact h2{
+  color: #d6e7fd;
 }
 
 /* Footer */
