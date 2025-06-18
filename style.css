@@ -7,7 +7,7 @@
   --text2: #fcf5e8;
   --orange: #db6f3e;
   --yellow: #e8a93f;
-  --brightblue: #1E90FF;
+  --brightblue: #4497ea;
   --green: #2c412d;
   --pale-yellow: #FFFFCC;
   --lightblue: #d6e7fd;
@@ -187,26 +187,95 @@ section {
   text-align: left;
 }
 
-
 .education {
   background-color: var(--orange);
   color: var(--text2);
-  flex-direction: row;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6rem 5vw;
+}
+
+.education h2 {
+  position: absolute;
+  top: 3rem;
+  right: 4rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: right;
+  z-index: 5;
+}
+
+.education .section-text {
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center the p tag */
+}
+
+.education .section-text p {
   text-align: left;
- 
+  max-width: 90%;
 }
 
 .education .section-image {
-  margin-top: 2rem;
-  align-items: left;
+  position: absolute;
+  top: 50%;
+  left: 45%; /* Shifted slightly left of center (50%) */
+  transform: translate(-50%, -50%);
+  z-index: 0;
 }
+
+
+.education .section-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+
+}
+
 
 .experience {
   background-color: var(--brightblue);
   color: var(--text2);
-  flex-direction: row;
-  text-align: left;
+  position: relative;
+  min-height: 100vh;
+  padding: 6rem 5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start; /* Ensures text content aligns to the left */
 }
+
+.experience .section-text {
+  max-width: 600px;
+  text-align: left;
+  z-index: 1;
+}
+
+.experience .section-text h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.experience .section-text p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.experience .section-image {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+}
+
+.experience .section-image img {
+  width: 400px;
+  border-radius: 12px;
+}
+/* Projects Section */
 
 .projects {
   background-color: var(--yellow);
@@ -267,7 +336,7 @@ footer {
   position: absolute;
   right: 0;
   top: 1460px;
-  width: 550px;
+  width: 500px;
   z-index: 10;
 }
 
@@ -275,6 +344,7 @@ footer {
   width: 100%;
   border-radius: 12px;
   object-fit: cover;
+  width:500px
 }
 
 .overlap-pizza {
