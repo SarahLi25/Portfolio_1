@@ -22,7 +22,7 @@
 }
 
 body {
-  background-image: url("https://i.pinimg.com/736x/72/3e/60/723e60d63d9110ad7e32009da501580f.jpg");
+  background-image: url("https://i.pinimg.com/736x/17/9d/c4/179dc41da5a22674e59db1be4af6bab4.jpg");
   color: var(--text1);
 }
 
@@ -38,6 +38,7 @@ h1, h2, h3 {
 /* Side Navigation */
 .nav-toggle {
   display: none;
+  background-color: var(--text-primary);
 }
 
 .nav-toggle-label {
@@ -46,7 +47,7 @@ h1, h2, h3 {
   right: 1rem;
   height: 2rem;
   width: 2rem;
-  background-color: var(--orange);
+  background-color: var(--text-primary);
   border-radius: 5px;
   cursor: pointer;
   z-index: 1001;
@@ -86,7 +87,7 @@ h1, h2, h3 {
   top: 0;
   height: 100vh;
   width: 250px;
-  background-color: var(--pale-yellow);
+  background-color: var(--bg-secondary);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -188,8 +189,8 @@ section {
 .education {
   color: var(--text2);
   position: relative;
-  display: flex;
-  align-items: center;
+  display:block;
+  align-items: left;
   justify-content: space-between;
   padding: 6rem 5vw;
 }
@@ -213,6 +214,7 @@ section {
 
 .education .section-text p {
   text-align: left;
+  padding-top: 2rem;
   max-width: 90%;
 }
 
@@ -231,14 +233,55 @@ section {
   border-radius: 12px;
 
 }
+.money-image img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  width:200px
+}
+.money-image{
+  position: absolute;
+  left: 580px;
+  top: 10rem;
+  z-index: 11
+}
 
+.group-money img{
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  width:380px
+}
+.group-money{
+  position: absolute;
+  left: 50rem;
+  top: 10rem;
+  z-index: 11
+}
+/* Style the video container */
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px; /* Adjust size as needed */
+  margin: 0 auto;
+  overflow: hidden;
+  float: left;
+}
+
+/* Style the video itself */
+.video-container video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+/* Experience Section */
 
 .experience {
   color: var(--text2);
   position: relative;
   min-height: 100vh;
   padding: 6rem 5vw;
-  display: flex;
+  display: block;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start; /* Ensures text content aligns to the left */
@@ -263,13 +306,43 @@ section {
 
 .experience .section-image {
   position: absolute;
-  bottom: 2rem;
-  right: 2rem;
+  bottom:7rem;
+  right: 3rem;
 }
 
 .experience .section-image img {
   width: 400px;
   border-radius: 12px;
+}
+
+/* Overlapping Images */
+.overlap-check {
+  position: absolute;
+  right: 0;
+  top: 118rem;
+  width: 500px;
+  z-index: 10;
+}
+
+.overlap-check img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  width:500px
+}
+
+.overlap-pizza {
+  position: absolute;
+  left: 590px;
+  top: 143rem;
+  width: 500px;
+  z-index: 11
+}
+
+.overlap-pizza img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
 }
 /* Projects Section */
 
@@ -314,48 +387,19 @@ section {
 }
 
 .contact h2{
-  color: #d6e7fd;
+  color: --textprimary;
 }
 
 /* Footer */
 footer {
   text-align: center;
   padding: 1.5rem;
-  background-color: var(--bg);
-  color: var(--text1);
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
   font-size: 0.9rem;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid var(--text-primary);
 }
 
-/* Overlapping Images */
-.overlap-check {
-  position: absolute;
-  right: 0;
-  top: 1460px;
-  width: 500px;
-  z-index: 10;
-}
-
-.overlap-check img {
-  width: 100%;
-  border-radius: 12px;
-  object-fit: cover;
-  width:500px
-}
-
-.overlap-pizza {
-  position: absolute;
-  left: 500px;
-  top: 1800px;
-  width: 500px;
-  z-index: 11
-}
-
-.overlap-pizza img {
-  width: 100%;
-  border-radius: 12px;
-  object-fit: cover;
-}
 
 /*shake the landing*/
 .landing-image{
@@ -381,7 +425,7 @@ footer {
 
 /*typewriter for landing*/
  .landing .section-text h3{
-  color: #db6f3e;
+  color: var(--text-primary);
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   border-right: .15em solid #2c412d; /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
