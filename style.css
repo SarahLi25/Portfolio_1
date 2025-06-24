@@ -2,16 +2,16 @@
 
 /* color scheme */
 :root {
-  --bg: #fff;
-  --text1: #111;
-  --text2: #fcf5e8;
-  --orange: #db6f3e;
-  --yellow: #e8a93f;
-  --brightblue: #4497ea;
-  --green: #2c412d;
-  --pale-yellow: #FFFFCC;
-  --lightblue: #d6e7fd;
+  /* Text Colors */
+  --text-primary: #4B3621;     /* Warm Espresso Brown */
+  --text-secondary: #A67C78;   /* Dusty Rose Taupe */
+
+  /* Background Colors */
+  --bg-main: #FDF6EC;          /* Vintage Cream Paper */
+  --bg-secondary: #A7A77C;     /* Muted Olive Green */
+  --bg-accent: #D8A47F;        /* Soft Burnt Orange */
 }
+
 
 * {
   margin: 0;
@@ -22,7 +22,7 @@
 }
 
 body {
-  background-color: var(--bg);
+  background-image: url("https://i.pinimg.com/736x/72/3e/60/723e60d63d9110ad7e32009da501580f.jpg");
   color: var(--text1);
 }
 
@@ -151,7 +151,6 @@ section {
 
 /* Unique Section Styles */
 .landing {
-  background-color: var(--pale-yellow);
   flex-direction: column;
   text-align: center;
 }
@@ -169,7 +168,6 @@ section {
 
 .about {
   display: flex;
-  background-color: var(--green);
   color: var(--text2);
   padding: 6rem 5vw;
   flex-direction: row-reverse;
@@ -188,7 +186,6 @@ section {
 }
 
 .education {
-  background-color: var(--orange);
   color: var(--text2);
   position: relative;
   display: flex;
@@ -237,7 +234,6 @@ section {
 
 
 .experience {
-  background-color: var(--brightblue);
   color: var(--text2);
   position: relative;
   min-height: 100vh;
@@ -278,7 +274,7 @@ section {
 /* Projects Section */
 
 .projects {
-  background-color: var(--yellow);
+  /*background*/
   text-align: center;
 }
 
@@ -298,20 +294,20 @@ section {
 }
 
 .future {
-  background-color: var(--lightblue);
+  /*background*/
   flex-direction: row-reverse;
   text-align: left;
 }
 
 .interests {
-  background-color: var(--pale-yellow);
+ /*background*/
   flex-direction: column;
   text-align: left;
   gap: 2rem;
 }
 
 .contact {
-  background-color: var(--green);
+ /*background*/
   color: var(--text2);
   flex-direction: column;
   text-align: center;
