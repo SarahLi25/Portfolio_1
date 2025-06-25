@@ -350,48 +350,54 @@ section {
   object-fit: cover;
 }
 /* Projects Section */
-
 .projects {
-  /*background*/
   background-image: url(Background/GreenPic5.png);
   margin: 0;
   height: 100vh;
   display: flex;
-  justify-content: center;     /* horizontally center the grid */
-  align-items: flex-end; 
-
-}
-
-.projects h2{
-  margin-top: -50px;
+  justify-content: flex-end;      /* push content to bottom */
+  align-items: center;            /* center content horizontally */
   text-align: center;
 }
 
-.projects p{
-  text-align: center;
+.projects h2 {
+  margin-top: -30px;
+  font-size: 2rem;
+}
+
+.projects p {
   font-size: 1.2rem;
   color: var(--text-primary);
-  margin-bottom: 20px;
+  margin: 5px 0;
 }
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 equal-width columns across full width */
-  width: 100%; /* full width of the page */
-  text-align: center;
-  margin-bottom: 40px;
-    }
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;                       /* smaller spacing */
+  width: 100%;
+  margin: 0 auto;
+  padding-bottom: 60px;;
+}
 
 .grid-item {
-  padding: 40px 0;
-  font-size: 1.5rem;
-  font-weight: bold;
-  border: 1px solid #ccc;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 400px;
+  height: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
 
-    }
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.grid-item:hover {
+  transform: scale(1.05);         /* optional hover effect */
+}
 
 .future {
   /*background*/
