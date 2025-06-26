@@ -1,10 +1,16 @@
-/*make theme*/
-
-/* color scheme */
+/* ========== COLOR VARIABLES ========== */
 :root {
   /* Text Colors */
   --text-primary: #4B3621;     /* Warm Espresso Brown */
   --text-secondary: #A67C78;   /* Dusty Rose Taupe */
+
+  /* Additional colors used */
+  --text1: #4B3621;   /* Same as text-primary */
+  --text2: #A67C78;   /* Same as text-secondary */
+  --textprimary: #4B3621; /* Fix typo variant */
+  --orange: #D8A47F;       /* Soft Burnt Orange */
+  --yellow: #A7A77C;       /* Muted Olive Green */
+  --green: #4CAF50;        /* Define green for nav links */
 
   /* Background Colors */
   --bg-main: #FDF6EC;          /* Vintage Cream Paper */
@@ -12,7 +18,7 @@
   --bg-accent: #D8A47F;        /* Soft Burnt Orange */
 }
 
-
+/* Reset and base styles */
 * {
   margin: 0;
   padding: 0;
@@ -21,19 +27,24 @@
   scroll-behavior: smooth;
 }
 
-body {
-  background-image: url("Background/Bg1.png");
-  color: var(--text1);
+html, body {
+  overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
 body {
+  background-image: url("Background/Bg1.png");
+  background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+  color: var(--text1);
   font-family: 'Nunito', sans-serif;
 }
 
-h1, h2, h3 {
+h1, h2, h3, p, li {
   font-family: 'Playfair Display', serif;
+  line-height: 1.6;
+  color: var(--text-primary);
 }
-
 
 /* Side Navigation */
 .nav-toggle {
@@ -110,18 +121,19 @@ h1, h2, h3 {
 
 /* Sections */
 section {
-  padding: 6rem 5vw;
+  padding: 6rem 0; /* no left/right padding */
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 4rem;
   flex-wrap: wrap;
   position: relative;
 }
 
 .section-text {
   flex: 1 1 45%;
+  padding-left: 3vw;
+  padding-right: 3vw;
 }
 
 .section-text h2 {
@@ -155,17 +167,25 @@ section {
   flex-direction: column;
   text-align: center;
   background-image: url(Background/Bg1.png);
+  background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+
 }
 
 .landing-image img {
   width: 100%;
   max-width: 250px;
-  justify-content: center;
+  align-items: center;
 }
 
 .landing .section-text h2 {
   color: var(--orange);
   font-size: 3rem;
+}
+
+.landing .section-text p {
+  text-align: center;
 }
 
 .about {
@@ -175,111 +195,207 @@ section {
   flex-direction: row-reverse;
   align-items: center;
   background-image: url(Background/Green2Pic.png);
+  background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+
 }
- 
+
 .about .section-text h2 {
   color: var(--yellow);
   text-align: center;
 }
 
-.about .section-text p{
+.about .section-text p {
   width: 65%;
   margin: 0 auto;
   text-align: left;
 }
 
-.education {
-  color: var(--text2);
-  position: relative;
-  display:block;
-  align-items: left;
+/* Container for text and carousel inside #education */
+#education .education-flex-wrapper {
+  display: flex;
   justify-content: space-between;
-  padding: 6rem 5vw;
-  background-image: url(Background/greenPic3.png);
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin: 0;
 }
 
-.education h2 {
-  position: absolute;
-  top: 3rem;
-  right: 4rem;
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-align: right;
-  z-index: 5;
+/* Text side */
+#education .section-text {
+  flex: 1 1 40%;
+  max-width: 40%;
+  text-align: left;
+  margin-left: 50px;
+  padding: 0;
 }
 
-.education .section-text {
-  flex: 1 1 45%;
+#education .section-text h2 {
+  margin-bottom: 1rem;
+}
+
+#education .section-text p,
+#education .section-text ul {
+  margin-top: 0.5rem;
+  line-height: 1.4;
+}
+
+#education .section-text ul {
+  margin-left: 40px;
+}
+
+/* Carousel side */
+#education .carousel-wrapper {
+  flex: 1 1 55%;
+  margin-top: 0;
+  position: relative;
+  background: none;
+  padding: 0 30px 30px 30px;
+  text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Vertically center the p tag */
+  justify-content: flex-start;
+  overflow: hidden;
+  box-sizing: border-box;
+  align-items: right;
 }
 
-.education .section-text p {
-  text-align: left;
-  padding-top: 2rem;
-  max-width: 90%;
+/* Carousel title */
+#education .carousel-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #222;
 }
 
-.education .section-image {
-  position: absolute;
-  top: 50%;
-  left: 45%; /* Shifted slightly left of center (50%) */
-  transform: translate(-50%, -50%);
-  z-index: 0;
+/* Carousel container hides overflow */
+#education .carousel-container {
+  overflow: hidden;
+  height: 400px; /* fixed height */
+  width: 500px;  /* fixed width */
 }
 
-
-.education .section-image img {
-  width: 100%;
-  max-width: 400px;
-  border-radius: 12px;
-
+/* Carousel flex container */
+#education .carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  gap: 20px;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
 }
-.money-image img {
-  width: 100%;
-  border-radius: 12px;
+
+#education .carousel::-webkit-scrollbar {
+  display: none;
+}
+
+/* Each slide */
+#education .slide {
+  flex: 0 0 100%;
+  max-width: 100%;
+  scroll-snap-align: center;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+}
+
+/* Slide images */
+#education .slide img {
+  width: 90%;
+  height: 140px;
   object-fit: cover;
-  width:200px
-}
-.money-image{
-  position: absolute;
-  left: 580px;
-  top: 10rem;
-  z-index: 11
+  border-radius: 8px;
+  margin: 0 auto 15px auto;
+  display: block;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  border: 1px solid #ccc;
 }
 
-.group-money img{
-  width: 100%;
-  border-radius: 12px;
-  object-fit: cover;
-  width:380px
+/* Slide text */
+#education .slide p {
+  font-size: 14px;
+  color: #222;
+  text-align: center;
+  margin-bottom: 10px;
 }
-.group-money{
-  position: absolute;
-  left: 50rem;
-  top: 10rem;
-  z-index: 11
-}
-/* Style the video container */
+
+/* Video container */
 .video-container {
   position: relative;
-  width: 100%;
-  max-width: 400px; /* Adjust size as needed */
-  margin: 0 auto;
+  width: 90%;
+  max-width: 400px;
+  margin: 0 auto 15px auto;
   overflow: hidden;
-  float: left;
-  z-index: 10;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  border: 1px solid #ccc;
 }
 
-/* Style the video itself */
+/* Video element */
 .video-container video {
   width: 100%;
   height: auto;
   display: block;
+  border-radius: 8px;
 }
-/* Experience Section */
 
+/* Buttons under carousel */
+#education .button-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+#education .scroll-btn {
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.3s;
+  user-select: none;
+}
+
+#education .scroll-btn:hover {
+  background-color: #555;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #education .education-flex-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  #education .section-text,
+  #education .carousel-wrapper {
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+  #education .carousel-wrapper {
+    margin-top: 2rem;
+    padding: 0 20px 30px 20px;
+  }
+  #education .slide img,
+  .video-container {
+    height: 120px;
+  }
+}
+
+/* Experience Section */
 .experience {
   color: var(--text2);
   position: relative;
@@ -288,8 +404,11 @@ section {
   display: block;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start; /* Ensures text content aligns to the left */
+  align-items: flex-start;
   background-image: url(Background/Green4pic.png);
+  background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
 }
 
 .experience .section-text {
@@ -300,18 +419,18 @@ section {
 
 .experience .section-text h2 {
   font-size: 2.5rem;
-  font-weight: bold;
   margin-bottom: 1rem;
 }
 
 .experience .section-text p {
   font-size: 1.2rem;
   line-height: 1.6;
+  text-align: left;
 }
 
 .experience .section-image {
   position: absolute;
-  bottom:7rem;
+  bottom: 7rem;
   right: 3rem;
 }
 
@@ -323,9 +442,9 @@ section {
 /* Overlapping Images */
 .overlap-check {
   position: absolute;
-  left:29rem;
-  top: 118rem;
-  width: 500px;
+  left: 29rem;
+  top: 118rem; /* This is a huge offset, consider better layout */
+  width: 1050px; /* Fixed width matching img */
   z-index: 10;
 }
 
@@ -333,15 +452,14 @@ section {
   width: 100%;
   border-radius: 12px;
   object-fit: cover;
-  width:1050px;
 }
 
 .overlap-pizza {
   position: absolute;
   left: 590px;
-  top: 143rem;
+  top: 143rem; /* Very large top offset, ensure page height accommodates */
   width: 500px;
-  z-index: 11
+  z-index: 11;
 }
 
 .overlap-pizza img {
@@ -349,138 +467,201 @@ section {
   border-radius: 12px;
   object-fit: cover;
 }
+
 /* Projects Section */
-.projects {
+#projects {
   background-image: url(Background/GreenPic5.png);
   margin: 0;
-  height: 100vh;
   display: flex;
-  justify-content: flex-end;      /* push content to bottom */
-  align-items: center;            /* center content horizontally */
+  flex-direction: column;
+  align-items: center;
   text-align: center;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding-top: 40px;
+  background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+
 }
 
-.projects h2 {
-  margin-top: -30px;
-  font-size: 2rem;
+#projects .section-text {
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 900px;
+  text-align: left;
 }
 
-.projects p {
+#projects .section-text h2 {
+  font-size: 2.2rem;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+  margin-top: 30px;
+}
+
+#projects .section-text p {
   font-size: 1.2rem;
   color: var(--text-primary);
-  margin: 5px 0;
+  margin: 4px 0;
+  text-align: left;
 }
 
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2px;                       /* smaller spacing */
-  width: 100%;
-  margin: 0 auto;
-  padding-bottom: 60px;;
+#projects .section-text li {
+  color: var(--text-primary);
+  text-decoration: none;
+  text-align: left;
 }
 
-.grid-item {
-  width: 400px;
-  height: 100%;
-  border-radius: 8px;
+#projects .project-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px; /* evenly spaced images */
+  max-width: 100%;
+  margin-bottom: 140px;
+}
+
+#projects .project-img {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.grid-item img {
-  width: 100%;
-  height: 100%;
-  border-radius: 8px;
-  object-fit: cover;
+#projects .project-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 15px;
 }
 
-.grid-item:hover {
-  transform: scale(1.05);         /* optional hover effect */
+#projects .project-img:hover {
+  transform: scale(1.03);
 }
 
-.future {
-  /*background*/
-  background-image: url(Background/GreenPic6.png);
+/* Future Section */
+/* ===== FIX: FUTURE SECTION ===== */
+#future {
+  width: 100vw;
+  display: flex;
   flex-direction: row-reverse;
-  text-align: left;
-}
-
-.interests {
- /*background*/
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem 5vw;
   background-image: url(Background/GreenPic6.png);
-  flex-direction: column;
+  background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
   text-align: left;
-  gap: 2rem;
+  box-sizing: border-box;
 }
 
-.contact {
- /*background*/
- background-image: url(Background/GreenPic7.png);
-  color: var(--text2);
+/* ===== FIX: INTERESTS SECTION ===== */
+#interests {
+  width: 100vw;
+  display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 5vw;
+  background-image: url(Background/GreenPic6.png);
+  background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+#interests .section-text,
+#interests .section-image {
+  text-align: center;
+  max-width: 800px;
+}
+
+/* ===== FIX: CONTACT SECTION ===== */
+#contact {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 5vw;
+  background-image: url(Background/GreenPic7.png);
+  background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+
+  text-align: center;
+  color: var(--text-secondary);
+  box-sizing: border-box;
+}
+
+#contact h2 {
+  color: var(--text-primary);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* ===== FIX: CENTER PROJECTS SECTION ===== */
+#projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-image: url(Background/GreenPic5.png);
+  background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+
+  width: 100vw;
+  padding: 6rem 5vw;
+  box-sizing: border-box;
+}
+
+#projects .section-text {
+  max-width: 800px;
+  margin-bottom: 2rem;
   text-align: center;
 }
 
-.contact h2{
-  color: --textprimary;
+#projects .section-text h2,
+#projects .section-text p {
+  text-align: center;
 }
 
-/* Footer */
+#projects .project-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  max-width: 100%;
+  margin-top: 30px;
+}
+
+#projects .project-title {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#projects .project-img {
+  margin: 0 auto;
+  display: block;
+}
+
 footer {
-  text-align: center;
+  width: 100vw;
   padding: 1.5rem;
   background-color: var(--bg-secondary);
   color: var(--text-primary);
   font-size: 0.9rem;
   border-top: 1px solid var(--text-primary);
-}
-
-
-/*shake the landing*/
-.landing-image{
-  /* Start the shake animation and make the animation last for 0.5 seconds */
-  animation: shake 0.5s;
-
-  /* When the animation is finished, start again */
-  animation-iteration-count: infinite;
-}
-@keyframes shake {
-  0% { transform: translate(1px, 1px) rotate(0deg); }
-  10% { transform: translate(-1px, -2px) rotate(-1deg); }
-  20% { transform: translate(-3px, 0px) rotate(1deg); }
-  30% { transform: translate(3px, 2px) rotate(0deg); }
-  40% { transform: translate(1px, -1px) rotate(1deg); }
-  50% { transform: translate(-1px, 2px) rotate(-1deg); }
-  60% { transform: translate(-3px, 1px) rotate(0deg); }
-  70% { transform: translate(3px, 1px) rotate(-1deg); }
-  80% { transform: translate(-1px, -1px) rotate(1deg); }
-  90% { transform: translate(1px, 2px) rotate(0deg); }
-  100% { transform: translate(1px, -2px) rotate(-1deg); }
-}
-
-/*typewriter for landing*/
- .landing .section-text h3{
-  color: var(--text-primary);
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid #2c412d; /* The typwriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: .15em; /* Adjust as needed */
-  animation: 
-    typing 3.5s steps(30, end),
-    blink-caret .5s step-end infinite;
-}
-
-/* The typing effect */
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: orange }
-
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
 }

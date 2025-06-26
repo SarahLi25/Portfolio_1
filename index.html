@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Nunito&display=swap" rel="stylesheet">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -56,42 +54,71 @@
   </section>
 
    <!--EducationPage-->
-  <section id="education" class="education">
+
+<section id="education" class="education">
+  <div class="education-flex-wrapper">
+
+    <!-- Left: Text -->
     <div class="section-text">
       <h2>Education</h2>
-      <p><b>2023-2027  Boonville High School</b></p>
+      <p><b>2023–2027 Boonville High School</b></p>
       <p>Academic Honors Diploma</p>
       <p><b>GPA</b>: 4.0</p>
-      <p><b>Class Rank</b>: 1/236</p
-      <p><b>Leadership Positions:</b></p> 
-      <ul></ul>
-        <li>Class of '27 Officer- Class-elected leader to represent and advocate for their class</li>
-        <li>National BETA- Elected Vice President to motivate students on academic excellence and civil service. Over 10 members achieved Top 3 at State Convention</li>
-        <li>Riley Dance Marathon- A student-led organization that raises funds and awareness to support Riley Hospital for Children. As an officer I help coordinate fundraising effects, and last year, our team raised over $20,000 to support pediatric patients</li>
-    </ul>
-</p>
-<div class="money-image">
-      <img src="assets/FocusPic.jpeg" alt="Picture of me and friends holding 21k sign after the dance marathon" />
-    </div>
-<div class="group-money">
-  <img src="assets//Group Pics.jpeg" alt="Picture of all members of RDM club after the big marathon holding 21k sign after total reveal" />
-</div>
+      <p><b>Class Rank</b>: 1/236</p>
+
       <p><b>2024 Indiana University (IU) Luddy School Women's Cybersecurity Program</b></p>
       <ul>
-        <li>Learned ethical hacking, digital safety, and threat prevention. </li>
-        <li>Gained experience with real-world tools, teamwork, and critical thing to solve security challenges</li>
+        <li>Learned ethical hacking, digital safety, and threat prevention.</li>
+        <li>Solved security problems with real-world tools, teamwork, and critical thinking</li>
       </ul>
-      <br></br>
     </div>
-    <br></br>
-    <div class="video-container">
-    <video autoplay loop muted playsinline>
-      <source src="assets/ScreenRecording_12-12-2024 21-33-49_1.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <br></br>
+<!-- Right: Carousel -->
+<div class="carousel-wrapper">
+  <div class="carousel-container">
+    <div class="carousel" id="leadership-carousel">
+
+      <div class="slide">
+        <div class="video-container">
+          <video autoplay loop muted playsinline>
+            <source src="assets/FinalVid.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <p><b>School Ambassador</b><br>
+        Represent my school, promoting its values, academic programs, and student life to the broader community.</p>
+      </div>
+
+      <div class="slide">
+        <img src="assets/FocusPic.jpeg" alt="Dance Marathon leadership" />
+        <p><b>Riley Dance Marathon Officer</b><br>
+          Helped coordinate fundraising for Riley Hospital for Children. Our team raised over $20,000 to support pediatric patients.
+        </p>
+      </div>
+
+      <div class="slide">
+        <img src="assets/GroupPics2.jpeg" alt="RDM group photo" />
+        <p><b>Class Officer</b><br>
+          Elected to represent the class and advocate for student needs in school-wide decisions.
+        </p>
+      </div>
+
+      <div class="slide">
+        <img src="assets/BETA.jpg" alt="BETA group photo" />
+        <p><b>National BETA Vice President</b><br>
+          Motivated peers toward academic excellence and service. Led 10+ members to top 3 state awards.
+        </p>
+      </div>
+
+    </div>
   </div>
-  </section>
+
+  <div class="button-row">
+    <button class="scroll-btn left" onclick="scrollCarousel('left')">←</button>
+    <button class="scroll-btn right" onclick="scrollCarousel('right')">→</button>
+  </div>
+</div>
+
+
 
   <!-- Overlapping Images -->
   <div class="overlap-check">
@@ -106,15 +133,15 @@
   <section id="experience" class="experience">
     <div class="section-text">
       <h2>Experience</h2>
-      <h2><b>2025</b></h2>
-      <h2>Nextech Catapult</h2>
+      <br></br>
+      <h2><b>2025</b> Nextech Catapult</h2>
       <p>Computer Science</p>
       <p>Evansville, Indiana | Summer 2025</p>
       <p></p>Nextech Catapult is a prestigious summer internship program that connects high school students across Indiana with hands-on experiences in computer science, professional development, and industry exposure. Through the program, I had the opportunity to work alongside tech professionals, gain real-world insight into STEM careers, and apply computer science concepts in a collaborative and innovative environment.</p>
       <p><b>During the Program I...</b></p>
       <div></div>
       <ul>
-        <li><b>Learned</b>coding with hands-on projects using HTML, CSS, JavaScript, and GitHub</li>
+        <li><b>Learned</b> coding with hands-on projects using HTML, CSS, JavaScript, and GitHub</li>
         <li><b>Participated</b> in professional development workshops, enhancing my communication, teamwork, and leadership abilities</li>
         <li><b>Engaged</b> in networking opportunities with industry professionals, gaining insights into career paths, internships, and job opportunities</li>
         <li><b>Collaborated</b> with fellow interns on group projects, fostering teamwork and creativity</li>
@@ -129,21 +156,32 @@
   </section>
 
    <!-- projectsPage -->
-<section id="projects" class="projects">
+  <section id="projects" class="projects">
   <div class="section-text">
     <h2>Sparked Ideas turned Projects</h2>
     <p>Every project begins with a spark.</p>
     <p>Strike a match to ignite an idea and see where it takes you</p>
   </div>
 
-  <div class="grid-container">
-    <img src="assets/YouthAware.png" alt="Youth Aware Project" class="grid-item">
-    <img src="assets/Backpack.png" alt="Backpack Through Time Project" class="grid-item">
-    <img src="assets/Gabriel.png" alt="Which Gabriel Are You? Project" class="grid-item">
-    <img src="assets/Pomodoro.png" alt="Blue Themed Pomodoro Project" class="grid-item">
+  <div class="project-row">
+    <div class="project-item">
+      <p class="project-title">Youth Aware</p>
+    <img src="assets/YouthAware.png" alt="Youth Aware Project" class="project-img">
+    </div>
+    <div class="project-item">
+      <p class="project-title">Backpack Through Time</p>
+    <img src="assets/Backpack.png" alt="Backpack Through Time Project" class="project-img">
+    </div>
+    <div class="project-item">
+      <p class="project-title">Which Gabriel Are You?</p>
+    <img src="assets/Gabriel.png" alt="Which Gabriel Are You? Project" class="project-img">
+    </div>
+    <div class="project-item">
+      <p class="project-title">Pomodoro</p>
+    <img src="assets/Pomodoro.png" alt="Blue Themed Pomodoro Project" class="project-img">
+    </div>
   </div>
 </section>
-
 
    <!--futurePage-->
   <section id="future" class="future">
@@ -178,14 +216,13 @@
       <img src="placeholder.jpg" alt="Contact Image" />
     </div>
 
-    <div id="particles-js"></div>
-
   </section>
 
   
   <footer>
     <p>&copy; 2025 Sarah Li All Rights Reserved</p>
   </footer>
+   <script src="script.js"></script>
 </body>
 </html>
 
