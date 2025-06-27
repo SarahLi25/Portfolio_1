@@ -1,21 +1,13 @@
 /* ========== COLOR VARIABLES ========== */
 :root {
   /* Text Colors */
-  --text-primary: #4B3621;     /* Warm Espresso Brown */
-  --text-secondary: #A67C78;   /* Dusty Rose Taupe */
+  --dark-text: #4B3621;     /* Warm Espresso Brown */
+  --light-text: #765350;   /* Dusty Rose Taupe */
 
-  /* Additional colors used */
-  --text1: #4B3621;   /* Same as text-primary */
-  --text2: #A67C78;   /* Same as text-secondary */
-  --textprimary: #4B3621; /* Fix typo variant */
-  --orange: #D8A47F;       /* Soft Burnt Orange */
-  --yellow: #A7A77C;       /* Muted Olive Green */
-  --green: #4CAF50;        /* Define green for nav links */
-
-  /* Background Colors */
-  --bg-main: #FDF6EC;          /* Vintage Cream Paper */
-  --bg-secondary: #A7A77C;     /* Muted Olive Green */
-  --bg-accent: #D8A47F;        /* Soft Burnt Orange */
+  /* Accents Colors */
+  --beige: #FDF6EC;          /* Vintage Cream Paper */
+  --green: #A7A77C;     /* Muted Olive Green */
+  --orange: #D8A47F;        /* Soft Burnt Orange */
 }
 
 /* Reset and base styles */
@@ -34,16 +26,10 @@ html, body {
 body {
   background-image: url("Background/Bg1.png");
   background-size: cover;
-background-repeat: no-repeat;
-background-position: center;
-  color: var(--text1);
+  background-repeat: no-repeat;
+  background-position: center;
+  color: var(--dark-text);
   font-family: 'Nunito', sans-serif;
-}
-
-h1, h2, h3, p, li {
-  font-family: 'Playfair Display', serif;
-  line-height: 1.6;
-  color: var(--text-primary);
 }
 
 /* Side Navigation */
@@ -58,7 +44,7 @@ h1, h2, h3, p, li {
   right: 1rem;
   height: 2rem;
   width: 2rem;
-  background-color: var(--text-primary);
+  background-color: var(--dark-text);
   border-radius: 5px;
   cursor: pointer;
   z-index: 1001;
@@ -98,7 +84,7 @@ h1, h2, h3, p, li {
   top: 0;
   height: 100vh;
   width: 250px;
-  background-color: var(--bg-secondary);
+  background-color: var(--green);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -109,7 +95,7 @@ h1, h2, h3, p, li {
 
 .side-nav a {
   margin: 1rem 0;
-  color: var(--green);
+  color: var(--orange);
   font-weight: bold;
   text-decoration: none;
   font-size: 1.2rem;
@@ -142,7 +128,7 @@ section {
 .section-text h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: var(--text1);
+  color: var(--dark-text);
   font-weight: bold;
 }
 
@@ -183,17 +169,19 @@ background-position: center;
 }
 
 .landing .section-text h2 {
-  color: var(--orange);
+  color: var(--dark-text);
   font-size: 3rem;
 }
 
+
 .landing .section-text p {
   text-align: center;
+  color: var(--dark-text);
 }
 
 .about {
   display: flex;
-  color: var(--text2);
+  color: var(--dark-text);
   padding: 6rem 5vw;
   flex-direction: row-reverse;
   align-items: center;
@@ -205,7 +193,7 @@ background-position: center;
 }
 
 .about .section-text h2 {
-  color: var(--yellow);
+  color: var(--dark-text);
   text-align: center;
 }
 
@@ -213,6 +201,8 @@ background-position: center;
   width: 65%;
   margin: 0 auto;
   text-align: left;
+  color: var(--light-text);
+
 }
 
 /* Container for text and carousel inside #education */
@@ -249,12 +239,17 @@ background-position: center;
   margin-left: 40px;
 }
 
+#education .section-text p {
+  margin-bottom: 0.5rem;
+  color: var(--light-text);
+}
+
 /* Carousel title */
 #education .carousel-title {
   font-weight: bold;
   font-size: 1.2rem;
   margin-bottom: 15px;
-  color: #222;
+  color:var(--light-text);
 }
 
 /* Carousel container hides overflow */
@@ -284,7 +279,7 @@ background-position: center;
   flex: 0 0 100%;
   max-width: 100%;
   scroll-snap-align: center;
-  background: rgba(255, 255, 255, 0.85);
+  background-color: var(--beige);
   border-radius: 10px;
   padding: 15px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
@@ -299,11 +294,12 @@ background-position: center;
 
 /* Slide images */
 #education .slide img {
-  width: 90%;
-  height: 140px;
+  width: 80%;
+  width: 300px;
   object-fit: cover;
   border-radius: 8px;
-  margin: 0 auto 15px auto;
+  margin-top: 25px;
+  margin-bottom: 10px;
   display: block;
   box-shadow: 0 3px 6px rgba(0,0,0,0.2);
   border: 1px solid #ccc;
@@ -316,6 +312,7 @@ background-position: center;
   text-align: center;
   margin-bottom: 10px;
 }
+
 
 /* Video container */
 .video-container {
@@ -382,57 +379,125 @@ background-position: center;
     height: 120px;
   }
 }
-
-/* Experience Section */
+/* === Experience Roadmap Section (merged with your current design) === */
 .experience {
-  color: var(--text1);
   position: relative;
   min-height: 100vh;
   padding: 6rem 5vw;
-  display: block;
+  background-image: url(Background/Green4pic.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  background-image: url(Background/Green4pic.png);
-  background-size: cover;
-background-repeat: no-repeat;
-background-position: center;
+  color: var(--dark-text);
+  font-family: 'Courier New', monospace;
 }
 
-.experience .section-text {
-  max-width: 600px;
-  text-align: left;
-  z-index: 1;
-}
-
-.experience .section-text h2 {
+.experience h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 
-.experience .section-text p {
+.experience p {
   font-size: 1.2rem;
   line-height: 1.6;
   text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.experience .section-image {
-  position: absolute;
-  bottom: 7rem;
-  right: 3rem;
+/* Roadmap image and checkpoints */
+.roadmap-image-container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 50px auto;
 }
 
-.experience .section-image img {
-  width: 400px;
+.roadmap-image {
+  width: 100%;
+  border: 4px solid #d9381e;
   border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
+
+/* Checkpoints positioned on top of image */
+.checkpoint {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #fff8e7;
+  border: 3px solid #d9381e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.checkpoint:hover {
+  transform: scale(1.1);
+}
+
+.checkpoint img {
+  width: 35px;
+  height: 35px;
+}
+
+/* Adjust positions based on your roadmap image */
+.checkpoint-1 { top: 60%; left: 10%; }
+.checkpoint-2 { top: 30%; left: 35%; }
+.checkpoint-3 { top: 65%; left: 60%; }
+.checkpoint-4 { top: 35%; left: 82%; }
+
+/* Popup box styling */
+.popup-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff8e7;
+  border: 3px solid #d9381e;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  display: none;
+  z-index: 999;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.popup-box p {
+  margin: 0;
+  font-size: 1rem;
+  color: #4b2a1a;
+  line-height: 1.5;
+}
+
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #d9381e;
+}
+
+.close-btn:hover {
+  color: #a62816;
+}
+
 
 /* Overlapping Images */
 .overlap-check {
   position: absolute;
-  left: 29rem;
-  top: 118rem; /* This is a huge offset, consider better layout */
-  width: 1050px; /* Fixed width matching img */
+  left: 37rem;
+  top: 120rem; /* This is a huge offset, consider better layout */
+  width: 910px; /* Fixed width matching img */
   z-index: 10;
 }
 
@@ -445,8 +510,8 @@ background-position: center;
 .overlap-pizza {
   position: absolute;
   left: 590px;
-  top: 143rem; /* Very large top offset, ensure page height accommodates */
-  width: 500px;
+  top: 138rem; /* Very large top offset, ensure page height accommodates */
+  width: 400px;
   z-index: 11;
 }
 
@@ -485,11 +550,11 @@ background-position: center;
 #projects .section-text h2,
 #projects .section-text p {
   text-align: center;
-  color: var(--text-primary);
+  color: var(--dark-text);
 }
 
 #projects .section-text li {
-  color: var(--text-primary);
+  color: var(--dark-text);
   text-decoration: none;
   text-align: left;
 }
@@ -510,7 +575,7 @@ background-position: center;
   margin-bottom: 10px;
   font-size: 1rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--dark-text);
 }
 
 #projects .project-img {
@@ -590,11 +655,11 @@ background-position: center;
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: var(--text-secondary);
+  color: var(--light-text);
 }
 
 #contact h2 {
-  color: var(--text-primary);
+  color: var(--dark-text);
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
@@ -605,10 +670,9 @@ footer {
   padding: 1.5rem;
   box-sizing: border-box;
 
-  background-color: var(--bg-secondary);
-  color: var(--text-primary);
+  background-color: var(--dark-text);
+  color: var(--light-text);
   font-size: 0.9rem;
-  border-top: 1px solid var(--text-primary);
 
   text-align: center;
   display: flex;
