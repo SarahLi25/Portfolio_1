@@ -206,6 +206,21 @@ background-position: center;
 }
 
 /* Container for text and carousel inside #education */
+#education {
+  width: 100vw;
+  padding: 5rem 4vw;
+  box-sizing: border-box;
+  background-image: url(Background/Green3Pic.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 #education .education-flex-wrapper {
   display: flex;
   justify-content: space-between;
@@ -213,7 +228,7 @@ background-position: center;
   gap: 2rem;
   flex-wrap: wrap;
   margin-right: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 /* Text side */
@@ -342,6 +357,7 @@ background-position: center;
   margin-top: 15px;
 }
 
+
 #education .scroll-btn {
   background-color: #333;
   color: white;
@@ -359,7 +375,7 @@ background-position: center;
   background-color: #555;
 }
 
-/* Responsive adjustments */
+/* accessibility for phones */
 @media (max-width: 768px) {
   #education .education-flex-wrapper {
     flex-direction: column;
@@ -379,7 +395,8 @@ background-position: center;
     height: 120px;
   }
 }
-/* === Experience Roadmap Section (merged with your current design) === */
+/* === Experience Roadmap Section === */
+/* === Experience Roadmap Section === */
 .experience {
   position: relative;
   min-height: 100vh;
@@ -392,13 +409,15 @@ background-position: center;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  color: var(--dark-text);
-  font-family: 'Courier New', monospace;
+  overflow-x: hidden;
 }
 
 .experience h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
+  align-self: flex-start;
+  text-align: left;
+  color: var(--dark-text);
 }
 
 .experience p {
@@ -406,32 +425,32 @@ background-position: center;
   line-height: 1.6;
   text-align: left;
   max-width: 800px;
-  margin: 0 auto;
+  margin-bottom: 2rem;
+  align-self: flex-start;
+  color: var(--dark-text);
 }
 
-/* Roadmap image and checkpoints */
+/* Roadmap image and checkpoints container picture is the container */
 .roadmap-image-container {
   position: relative;
-  width: 100%;
-  max-width: 900px;
-  margin: 50px auto;
+  width:600px;
+  margin-top: -150px;;
+  overflow: hidden;
+  align-self: flex-start;
 }
 
 .roadmap-image {
   width: 100%;
-  border: 4px solid #d9381e;
   border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Checkpoints positioned on top of image */
+/* Checkpoint dots */
 .checkpoint {
   position: absolute;
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: #fff8e7;
-  border: 3px solid #d9381e;
+  background: var(--light-bg, #fff8e7);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -449,33 +468,32 @@ background-position: center;
   height: 35px;
 }
 
-/* Adjust positions based on your roadmap image */
-.checkpoint-1 { top: 60%; left: 10%; }
-.checkpoint-2 { top: 30%; left: 35%; }
-.checkpoint-3 { top: 65%; left: 60%; }
-.checkpoint-4 { top: 35%; left: 82%; }
+.checkpoint-1 { top: 0%; left: 70%; }
+.checkpoint-2 { top: 20%; left: 50%; }
+.checkpoint-3 { top: 52%; left: 57%; }
+.checkpoint-4 { top: 85%; left: 10%; }
 
-/* Popup box styling */
+/* Popup box */
 .popup-box {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #fff8e7;
-  border: 3px solid #d9381e;
+  background: var(--light-bg, #fff8e7);
   border-radius: 10px;
   padding: 20px;
   width: 300px;
   display: none;
   z-index: 999;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  color: var(--dark-text);
 }
 
 .popup-box p {
   margin: 0;
   font-size: 1rem;
-  color: #4b2a1a;
   line-height: 1.5;
+  color: var(--dark-text);
 }
 
 .close-btn {
@@ -484,19 +502,34 @@ background-position: center;
   right: 12px;
   font-size: 1.2rem;
   cursor: pointer;
-  color: #d9381e;
+  color: var(--dark-text);
 }
 
 .close-btn:hover {
-  color: #a62816;
+  opacity: 0.7;
 }
 
+@media (max-width: 768px) {
+  .roadmap-image-container {
+    max-width: 100%;
+  }
+
+  .checkpoint {
+    width: 50px;
+    height: 50px;
+  }
+
+  .checkpoint img {
+    width: 30px;
+    height: 30px;
+  }
+}
 
 /* Overlapping Images */
 .overlap-check {
   position: absolute;
-  left: 37rem;
-  top: 120rem; /* This is a huge offset, consider better layout */
+  left: 35rem;
+  top: 127rem; /* This is a huge offset, consider better layout */
   width: 910px; /* Fixed width matching img */
   z-index: 10;
 }
@@ -509,9 +542,9 @@ background-position: center;
 
 .overlap-pizza {
   position: absolute;
-  left: 590px;
-  top: 138rem; /* Very large top offset, ensure page height accommodates */
-  width: 400px;
+  left: 1rem;
+  top: 140rem; /* Very large top offset, ensure page height accommodates */
+  width: 350px;
   z-index: 11;
 }
 
@@ -671,7 +704,7 @@ footer {
   box-sizing: border-box;
 
   background-color: var(--dark-text);
-  color: var(--light-text);
+  color: whitesmoke;
   font-size: 0.9rem;
 
   text-align: center;
@@ -680,3 +713,39 @@ footer {
   align-items: center;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Typing effect for h3 */
+.typing-effect {
+  display:inline-block;
+  overflow: hidden;
+  border-right: 2px solid var(--dark-text); /* Simulate cursor */
+  white-space: nowrap;
+  animation: typing 2.5s steps(20, end), blink 0.7s step-end infinite;
+  width: 16ch; /* Adjust width to fit text */
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 16ch; 
+  }
+}
+
+@keyframes blink {
+  0%, 100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--dark-text);
+  }
+}
