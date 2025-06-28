@@ -1,6 +1,17 @@
 //auto scroll after landing
 //add the drop and swing for id card (landing)
 //add dark/light mode
+// Simple toggle function
+function toggleDarkMode() {
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  
+  document.documentElement.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+}
+
+//event listeners//
+document.getElementById('dark-mode-btn')?.addEventListener('click', toggleDarkMode);
 //fade in
 //carosel for education
 
@@ -30,40 +41,40 @@ function scrollCarousel(direction) {
   });
 }
 
-//pop ups for experience checkpoints
-// Select popup elements
-// Define messages for each checkpoint
-let popupBox = document.getElementById('popup-box');
-let popupText = document.getElementById('popup-text');
-let closeBtn = document.getElementById('close-btn');
+// === Experience Roadmap JS ===
+document.addEventListener('DOMContentLoaded', function() {
+    let checkpoints = document.querySelectorAll('.checkpoint');
+    let popupBox = document.getElementById('popup-box');
+    let popupText = document.getElementById('popup-text');
+    let closeBtn = document.getElementById('close-btn');
 
-let steps = {
-  'checkpoint-1': '🥖 Step 1: Learned HTML, CSS, JavaScript, and GitHub.',
-  'checkpoint-2': '🍅 Step 2: Collaborated with peers on real-world projects.',
-  'checkpoint-3': '🧀 Step 3: Grew leadership and communication through workshops.',
-  'checkpoint-4': '🔥 Step 4: Presented projects and gained mentorship.'
-};
+    // Popups
+    let content = [
+        'The Dough! 🍕<br><br> Gained hands-on experience in coding, design, and professional tools.',
+        'Adding the Sauce! 🍅<br><br>Time to add some flavor! Collaborated with interns to brainstorm, plan, and develop projects together.',
+        'The Cheese Layer! 🧀<br><br>The cheese brings everything together!Got guidance from industry professionals and improved soft skills.',
+        'Into the Oven! 🔥<br><br>The final step - putting it all in the oven! Showcased my projects and work to peers, mentors, and tech leaders.'
+    ];
 
-let checkpoints = document.querySelectorAll('.checkpoint');
+    // Add click events to checkpoints
+    checkpoints.forEach((checkpoint, index) => {
+        checkpoint.addEventListener('click', function() {
+            popupText.innerHTML = content[index];
+            popupBox.style.display = 'block';
+        });
+    });
 
-checkpoints.forEach(cp => {
-  cp.addEventListener('click', () => {
-    let stepClass = Array.from(cp.classList).find(cls => cls.startsWith('checkpoint-'));
-    if (stepClass && steps[stepClass]) {
-      popupText.textContent = steps[stepClass];
-      popupBox.style.display = 'block';
-    }
-  });
-});
+    // Close popup
+    closeBtn.addEventListener('click', function() {
+        popupBox.style.display = 'none';
+    });
 
-closeBtn.addEventListener('click', () => {
-  popupBox.style.display = 'none';
-});
-
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    popupBox.style.display = 'none';
-  }
+    // Close on outside click
+    document.addEventListener('click', function(e) {
+        if (!popupBox.contains(e.target) && !e.target.closest('.checkpoint')) {
+            popupBox.style.display = 'none';
+        }
+    });
 });
 
 

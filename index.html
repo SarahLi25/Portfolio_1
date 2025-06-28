@@ -15,6 +15,11 @@
     <span></span>
   </label>
   <nav class="side-nav">
+    <!-- Dark mode toggle button -->
+  <button id="dark-mode-btn" onclick="toggleDarkMode()" class="theme-toggle">
+    <span class="sun-icon">☀️</span>
+    <span class="moon-icon">🌙</span>
+  </button>
     <a href="#landing">Home</a>
     <a href="#about">About Me</a>
     <a href="#education">Education</a>
@@ -132,35 +137,36 @@
 
 <!-- experience-roadmap.html -->
 <section id="experience-roadmap" class="experience">
-  <h2>Order My Experience</h2>
-  <p><strong>2025 Nextech Catapult</strong><br>Computer Science Internship • Evansville, Indiana</p>
+        <h2>My Experience</h2>
+        <p><strong>2025 Nextech Catapult</strong><br>Computer Science Internship • Evansville, Indiana</p>
 
-  <div class="roadmap-image-container">
-    <img src="assets/UpdateGraph.png" alt="Pizza Internship Roadmap" class="roadmap-image">
+        <div class="roadmap-image-container">
+            <img src="assets/UpdateGraph.png" alt="Pizza Internship Roadmap" class="roadmap-image">
 
-    <div class="checkpoint checkpoint-1" tabindex="0">
-      <img src="assets/dough.png" alt="Step 1">
-    </div>
-    <div class="checkpoint checkpoint-2" tabindex="0">
-      <img src="assets/Tomato.png" alt="Step 2">
-    </div>
-    <div class="checkpoint checkpoint-3" tabindex="0">
-      <img src="assets/Cheese.png" alt="Step 3">
-    </div>
-    <div class="checkpoint checkpoint-4" tabindex="0">
-      <img src="assets/oven.png" alt="Step 4">
-    </div>
-  </div>
+            <div class="checkpoint checkpoint-1" tabindex="0">
+                <img src="assets/dough.png" alt="Step 1">
+            </div>
+            <div class="checkpoint checkpoint-2" tabindex="0">
+                <img src="assets/Tomato.png" alt="Step 2">
+            </div>
+            <div class="checkpoint checkpoint-3" tabindex="0">
+                <img src="assets/Cheese.png" alt="Step 3">
+            </div>
+            <div class="checkpoint checkpoint-4" tabindex="0">
+                <img src="assets/oven.png" alt="Step 4">
+            </div>
+        </div>
 
-  <div class="popup-box" id="popup-box">
-    <span class="close-btn" id="close-btn">&times;</span>
-    <p id="popup-text"></p>
-  </div>
-</section>
+        <!-- Popup -->
+        <div class="popup-box" id="popup-box">
+            <span class="close-btn" id="close-btn">&times;</span>
+            <p id="popup-text"></p>
+        </div>
+    </section>
 
 
    <!-- projectsPage -->
-  <section id="projects" class="projects">
+ <section id="projects" class="projects">
   <div class="section-text">
     <h2>Sparked Ideas turned Projects</h2>
     <p>Every project begins with a spark.</p>
@@ -170,19 +176,31 @@
   <div class="project-row">
     <div class="project-item">
       <p class="project-title">Youth Aware</p>
-    <img src="assets/YouthAware.png" alt="Youth Aware Project" class="project-img">
+      <a href="https://sarahli25.github.io/YouthAware/" target="_blank">
+        <img src="assets/YouthAware.png" alt="Youth Aware Project" class="project-img">
+      </a>
+      <p class="project-description">A website designed to educate young adults on critical health issues—like mental health, diet, and tanning.</p>
     </div>
     <div class="project-item">
       <p class="project-title">Backpack Through Time</p>
-    <img src="assets/Backpack.png" alt="Backpack Through Time Project" class="project-img">
+      <a href="https://sarahli25.github.io/BackpackThroughTime/" target="_blank">
+        <img src="assets/Backpack.png" alt="Backpack Through Time Project" class="project-img">
+      </a>
+       <p class="project-description">An interactive story game that takes players on a journey through history, making choices that shape the past and future.</p>
     </div>
     <div class="project-item">
       <p class="project-title">Which Gabriel Are You?</p>
-    <img src="assets/Gabriel.png" alt="Which Gabriel Are You? Project" class="project-img">
+      <a href=" https://sarahli25.github.io/WhichGabrielAreYou/" target="_blank">
+        <img src="assets/Gabriel.png" alt="Which Gabriel Are You? Project" class="project-img">
+      </a>
+      <p class="project-description">A lighthearted personality quiz inspired by a dear friend, exploring different "Gabriel" types.</p>
     </div>
     <div class="project-item">
       <p class="project-title">Pomodoro</p>
-    <img src="assets/Pomodoro.png" alt="Blue Themed Pomodoro Project" class="project-img">
+      <a href="https://sarahli25.github.io/BlueThemedPomodoro/" target="_blank">
+        <img src="assets/Pomodoro.png" alt="Blue Themed Pomodoro Project" class="project-img">
+      </a>
+      <p class="project-description"> A calming, blue-themed productivity timer that helps users stay focused with toggling themes and motivational quotes.</p>
     </div>
   </div>
 </section>
@@ -222,7 +240,7 @@
 
   </section>
 
-  
+
   <footer>
     <p>&copy; 2025 Sarah Li All Rights Reserved</p>
   </footer>

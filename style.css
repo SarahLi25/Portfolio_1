@@ -12,8 +12,6 @@
 
 /* Reset and base styles */
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
   font-family: 'Segoe UI', sans-serif;
   scroll-behavior: smooth;
@@ -396,11 +394,10 @@ background-position: center;
   }
 }
 /* === Experience Roadmap Section === */
-/* === Experience Roadmap Section === */
 .experience {
   position: relative;
   min-height: 100vh;
-  padding: 6rem 5vw;
+  padding: 6rem 5vw 2rem 5vw;
   background-image: url(Background/Green4pic.png);
   background-size: cover;
   background-repeat: no-repeat;
@@ -410,6 +407,7 @@ background-position: center;
   justify-content: flex-start;
   align-items: flex-start;
   overflow-x: hidden;
+  overflow-y: hidden
 }
 
 .experience h2 {
@@ -433,10 +431,12 @@ background-position: center;
 /* Roadmap image and checkpoints container picture is the container */
 .roadmap-image-container {
   position: relative;
-  width:600px;
-  margin-top: -150px;;
-  overflow: hidden;
+  margin-left: 10rem;
+  width: 600px;
+  margin-top: -150px;
+  overflow: visible;
   align-self: flex-start;
+  margin-bottom:1px;
 }
 
 .roadmap-image {
@@ -457,6 +457,7 @@ background-position: center;
   cursor: pointer;
   transition: transform 0.2s ease;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 10; /* Added z-index to ensure clickability */
 }
 
 .checkpoint:hover {
@@ -468,10 +469,10 @@ background-position: center;
   height: 35px;
 }
 
-.checkpoint-1 { top: 0%; left: 70%; }
-.checkpoint-2 { top: 20%; left: 50%; }
-.checkpoint-3 { top: 52%; left: 57%; }
-.checkpoint-4 { top: 85%; left: 10%; }
+.checkpoint-1 { top: 22%; left: 42.5%; }
+.checkpoint-2 { top: 37%; left: 56%; }
+.checkpoint-3 { top: 55.5%; left: 56%; }
+.checkpoint-4 { top: 70%; left: 42%; }
 
 /* Popup box */
 .popup-box {
@@ -525,12 +526,13 @@ background-position: center;
   }
 }
 
+
 /* Overlapping Images */
 .overlap-check {
   position: absolute;
-  left: 35rem;
-  top: 127rem; /* This is a huge offset, consider better layout */
-  width: 910px; /* Fixed width matching img */
+  left: 30rem;
+  top: 137rem; /* This is a huge offset, consider better layout */
+  width: 1000px; /* Fixed width matching img */
   z-index: 10;
 }
 
@@ -542,9 +544,9 @@ background-position: center;
 
 .overlap-pizza {
   position: absolute;
-  left: 1rem;
-  top: 140rem; /* Very large top offset, ensure page height accommodates */
-  width: 350px;
+  left: 6rem;
+  top: 145rem; /* Very large top offset, ensure page height accommodates */
+  width: 400px;
   z-index: 11;
 }
 
@@ -600,7 +602,7 @@ background-position: center;
   gap: 40px;
   max-width: 100%;
   margin-top: 30px;
-  margin-bottom: 140px;
+  margin-bottom: 5rem;
 }
 
 #projects .project-title {
@@ -610,11 +612,26 @@ background-position: center;
   font-weight: 600;
   color: var(--dark-text);
 }
+.project-item {
+  max-width: 250px; /* Adjust based on your image width */
+  margin: 0 auto 20px auto; /* Center each project item */
+  text-align: center;
+}
+
+#projects .project-description {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var("dark-text");
+  line-height: 1.4;
+  word-wrap: break-word;
+}
 
 #projects .project-img {
   width: 200px;
   height: auto;
   margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 30px;
   display: block;
   border-radius: 10px;
   object-fit: cover;
@@ -626,6 +643,10 @@ background-position: center;
   transform: scale(1.03);
 }
 
+#projects,
+#projects * {
+  cursor: url('assets/MatchStickFire.png') 16 16, auto !important;
+}
 
 /* ==============================
    Future Section

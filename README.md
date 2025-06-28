@@ -8,3 +8,4 @@ Citations for this portfolio
     https://www.target.com/p/retro-style-wireless-handset-rotary-dial-phone-with-hd-audio-compatible-with-smartphone-black/-/A-93282033?TCID=PDS-626751354316-2680079813481&pp=0
     https://i.pinimg.com/736x/c4/6d/29/c46d29dea9b69e871e3cace9003b2e71.jpg
     https://css-tricks.com/snippets/css/typewriter-effect/
+    https://www.w3schools.com/js/js_popup.asp
