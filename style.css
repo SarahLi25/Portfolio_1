@@ -33,7 +33,7 @@ body {
 /* Side Navigation */
 .nav-toggle {
   display: none;
-  background-color: var(--text-primary);
+  background-color: var(--dark-text);
 }
 
 .nav-toggle-label {
@@ -82,7 +82,7 @@ body {
   top: 0;
   height: 100vh;
   width: 250px;
-  background-color: var(--green);
+  background-color: var(--light-text);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -157,6 +157,7 @@ section {
   background-size: cover;
 background-repeat: no-repeat;
 background-position: center;
+padding: 4rem 5vw;
 
 }
 
@@ -171,12 +172,12 @@ background-position: center;
   font-size: 3rem;
 }
 
-
-.landing .section-text p {
+.landing .section-text h3 {
   text-align: center;
   color: var(--dark-text);
+  margin-bottom: 5rem;
 }
-
+/* About Section */
 .about {
   display: flex;
   color: var(--dark-text);
@@ -649,28 +650,50 @@ background-position: center;
 }
 
 /* ==============================
-   Future Section
+   Interests Section
    ============================== */
-#future {
-  width: 100vw;
-  padding: 6rem 5vw;
-  box-sizing: border-box;
-  background-image: url(Background/GreenPic6.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
 
+/* Main section styling */
+#interests {
   display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  text-align: left;
+  text-align: center;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(Background/GreenPic4.png);
+}
+
+/* Text block */
+.section-text {
+  margin-top: 3px;
+}
+
+/* Film image at bottom */
+.film {
+  width: 1400px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.camera {
+  width: 10px;
+  height: auto;
+  position: absolute;
+  align-items: center;
+  top: 20%; /* adjust if overlapping film */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: block;
 }
 
 /* ==============================
-   Interests Section
+   future Section
    ============================== */
-#interests {
+#future {
   width: 100vw;
   padding: 6rem 5vw;
   box-sizing: border-box;
@@ -686,8 +709,8 @@ background-position: center;
   text-align: center;
 }
 
-#interests .section-text,
-#interests .section-image {
+#future .section-text,
+#future .section-image {
   max-width: 800px;
   text-align: center;
 }
@@ -770,3 +793,5 @@ footer {
     border-color: var(--dark-text);
   }
 }
+
+

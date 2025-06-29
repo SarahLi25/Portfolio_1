@@ -1,52 +1,66 @@
 //auto scroll after landing
-//add the drop and swing for id card (landing)
-//add dark/light mode
-// Simple toggle function
-function toggleDarkMode() {
-  const currentTheme = document.documentElement.getAttribute('data-theme');
-  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-  
-  document.documentElement.setAttribute('data-theme', newTheme);
-  localStorage.setItem('theme', newTheme);
-}
 
-//event listeners//
-document.getElementById('dark-mode-btn')?.addEventListener('click', toggleDarkMode);
-//fade in
+//fade in stars
 //carosel for education
 
-let carousel = document.getElementById('leadership-carousel');
-let btnLeft = document.querySelector('.scroll-btn.left');
-let btnRight = document.querySelector('.scroll-btn.right');
+// Wait for DOM to be fully loaded before accessing elements
+document.addEventListener('DOMContentLoaded', function() {
+    let carousel = document.getElementById('leadership-carousel');
+    let btnLeft = document.querySelector('.scroll-btn.left');
+    let btnRight = document.querySelector('.scroll-btn.right');
 
-btnLeft.addEventListener('click', () => scrollCarousel('left'));
-btnRight.addEventListener('click', () => scrollCarousel('right'));
+    // Only add event listeners if elements exist
+    if (btnLeft && btnRight && carousel) {
+        btnLeft.addEventListener('click', () => scrollCarousel('left'));
+        btnRight.addEventListener('click', () => scrollCarousel('right'));
+    } else {
+        console.warn('Carousel elements not found:', {
+            carousel: !!carousel,
+            btnLeft: !!btnLeft,
+            btnRight: !!btnRight
+        });
+    }
 
-function scrollCarousel(direction) {
-  let slideWidth = carousel.clientWidth; // width of visible carousel area
-  let maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
-  let scrollLeft = carousel.scrollLeft;
+    // Move the scrollCarousel function inside so it has access to carousel
+    function scrollCarousel(direction) {
+        if (!carousel) {
+            console.warn('Carousel element not found');
+            return;
+        }
+        
+        let slideWidth = carousel.clientWidth; // width of visible carousel area
+        let maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
+        let scrollLeft = carousel.scrollLeft;
 
-  if (direction === 'right') {
-    scrollLeft += slideWidth;
-    if (scrollLeft > maxScrollLeft) scrollLeft = maxScrollLeft;
-  } else if (direction === 'left') {
-    scrollLeft -= slideWidth;
-    if (scrollLeft < 0) scrollLeft = 0;
-  }
+        if (direction === 'right') {
+            scrollLeft += slideWidth;
+            if (scrollLeft > maxScrollLeft) scrollLeft = maxScrollLeft;
+        } else if (direction === 'left') {
+            scrollLeft -= slideWidth;
+            if (scrollLeft < 0) scrollLeft = 0;
+        }
 
-  carousel.scrollTo({
-    left: scrollLeft,
-    behavior: 'smooth'
-  });
-}
+        carousel.scrollTo({
+            left: scrollLeft,
+            behavior: 'smooth'
+        });
+    }
+});
 
 // === Experience Roadmap JS ===
+
+// === Experience Roadmap JS (also wrapped in DOMContentLoaded) ===
 document.addEventListener('DOMContentLoaded', function() {
     let checkpoints = document.querySelectorAll('.checkpoint');
     let popupBox = document.getElementById('popup-box');
     let popupText = document.getElementById('popup-text');
     let closeBtn = document.getElementById('close-btn');
+
+    // Check if elements exist before proceeding
+    if (!popupBox || !popupText || !closeBtn) {
+        console.warn('Popup elements not found');
+        return;
+    }
 
     // Popups
     let content = [
@@ -59,8 +73,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add click events to checkpoints
     checkpoints.forEach((checkpoint, index) => {
         checkpoint.addEventListener('click', function() {
-            popupText.innerHTML = content[index];
-            popupBox.style.display = 'block';
+            if (content[index]) {
+                popupText.innerHTML = content[index];
+                popupBox.style.display = 'block';
+            }
         });
     });
 
@@ -76,7 +92,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-
 
 
 

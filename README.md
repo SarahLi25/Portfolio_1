@@ -9,3 +9,5 @@ Citations for this portfolio
     https://i.pinimg.com/736x/c4/6d/29/c46d29dea9b69e871e3cace9003b2e71.jpg
     https://css-tricks.com/snippets/css/typewriter-effect/
     https://www.w3schools.com/js/js_popup.asp
+    https://s3.amazonaws.com/msoe/files/callouts/wide_xlrg_computer-science-landing-page.jpg
+    https://mvnu.edu/content/uploads/2022/05/ComputerEngineering.jpg
