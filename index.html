@@ -201,14 +201,21 @@
 </section>
 
   <!--interestsPage-->
-  <section id="interests" class="interests">
+<section id="interests" class="interests">
   <div class="section-text">
     <h2>Interests</h2>
     <p>Capturing the moments and passions that inspire me</p>
   </div>
 
   <div class="section-image">
-    <img src="assets/FilmPictures.png" alt="Film Strip" class="film" />
+    <div class="scroll-wrapper">
+      <div class="scroll-track">
+        <img class="film" src="assets/FilmPictures.png" alt="Film" />
+        <img class="film" src="assets/FilmPictures.png" alt="Film" />
+        <img class="film" src="assets/FilmPictures.png" alt="Film" />
+      </div>
+    </div>
+
     <img src="assets/Camera.png" alt="Camera" class="camera" />
   </div>
 </section>
@@ -225,19 +232,47 @@
   </section>
 
    <!--conatctsPage-->
-  <section id="contact" class="contact">
-    <div class="section-text">
-      <h2>Contact</h2>
-      <p>Have an idea, questions, or an oppurtunity?</p>
-      <p>Let's Build a Connection!</p>
+<section id="contact" class="contact">
+  <div class="left-side">
+    <h2>Contact</h2>
+    <p>Have an idea, questions, or an opportunity?</p>
+    <p>Let's Build a Connection!</p>
+
+    <!-- Social Icons -->
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/sarah-li-873441270/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/960px-LinkedIn_logo_initials.png" alt="LinkedIn" class="social-icon" />
+      </a>
+
+      <a href="https://github.com/SarahLi25" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+        <img src="https://pngimg.com/d/github_PNG19.png" alt="GitHub" class="social-icon" />
+      </a>
     </div>
-    <div class="section-image">
-      <img src="placeholder.jpg" alt="Contact Image" />
-    </div>
+  </div>
 
-  </section>
+  <div class="right-side">
+    <form
+      action="https://docs.google.com/forms/d/e/1FAIpQLSfFkyn-U0lhFmwcwfWIscd3bMWqUJZIRdOfjK-K-GeJq57q3g/formResponse"
+      method="POST"
+      target="_blank"
+      class="custom-google-form"
+    >
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="entry.1927327671" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="entry.1610939032" required />
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="entry.1793193378" rows="5" required></textarea>
+
+      <button type="submit">Send</button>
+    </form>
+  </div>
+</section>
 
 
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Sarah Li All Rights Reserved</p>
   </footer>

@@ -1,7 +1,8 @@
 //auto scroll after landing
 
 //fade in stars
-//carosel for education
+
+//carosel for education (DONE)
 
 // Wait for DOM to be fully loaded before accessing elements
 document.addEventListener('DOMContentLoaded', function() {
@@ -47,9 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// === Experience Roadmap JS ===
-
-// === Experience Roadmap JS (also wrapped in DOMContentLoaded) ===
+// === Experience Roadmap JS === //
 document.addEventListener('DOMContentLoaded', function() {
     let checkpoints = document.querySelectorAll('.checkpoint');
     let popupBox = document.getElementById('popup-box');

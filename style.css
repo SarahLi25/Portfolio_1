@@ -131,7 +131,6 @@ section {
 }
 
 .section-text p {
-  font-size: 1.3rem;
   line-height: 1.6;
 }
 
@@ -142,12 +141,6 @@ section {
   align-items: center;
 }
 
-.section-image img {
-  width: 100%;
-  max-width: 600px;
-  border-radius: 12px;
-  object-fit: cover;
-}
 
 /* Unique Section Styles */
 .landing {
@@ -201,7 +194,15 @@ background-position: center;
   margin: 0 auto;
   text-align: left;
   color: var(--light-text);
+  font-size: 1.3rem;
 
+}
+
+#about .section-image img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px;
+  object-fit: cover;
 }
 
 /* Container for text and carousel inside #education */
@@ -247,6 +248,7 @@ background-position: center;
 #education .section-text ul {
   margin-top: 0.5rem;
   line-height: 1.4;
+  font-size: 1.3rem;
 }
 
 #education .section-text ul {
@@ -256,6 +258,7 @@ background-position: center;
 #education .section-text p {
   margin-bottom: 0.5rem;
   color: var(--light-text);
+  font-size: 1.3rem;
 }
 
 /* Carousel title */
@@ -429,6 +432,13 @@ background-position: center;
   color: var(--dark-text);
 }
 
+#experience .section-image img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
 /* Roadmap image and checkpoints container picture is the container */
 .roadmap-image-container {
   position: relative;
@@ -577,22 +587,19 @@ background-position: center;
   margin: 0;
 }
 
-#projects .section-text {
-  max-width: 800px;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-#projects .section-text h2,
 #projects .section-text p {
   text-align: center;
   color: var(--dark-text);
+  font-size: 1.3rem;
+  line-height: 6px;
+  margin-bottom: 2rem;
 }
 
-#projects .section-text li {
+#projects .section-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
   color: var(--dark-text);
-  text-decoration: none;
-  text-align: left;
 }
 
 #projects .project-row {
@@ -614,14 +621,14 @@ background-position: center;
   color: var(--dark-text);
 }
 .project-item {
-  max-width: 250px; /* Adjust based on your image width */
+  max-width: 250px; 
   margin: 0 auto 20px auto; /* Center each project item */
   text-align: center;
 }
 
 #projects .project-description {
   margin-top: 10px;
-  font-size: 14px;
+  font-size: 16px;
   color: var("dark-text");
   line-height: 1.4;
   word-wrap: break-word;
@@ -658,37 +665,93 @@ background-position: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center; /* vertical centering */
   text-align: center;
-  padding: 0;
-  width: 100vw;
   height: 100vh;
+  position: relative;
   background-image: url(Background/GreenPic4.png);
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  padding: 2rem 0;
 }
 
-/* Text block */
-.section-text {
-  margin-top: 3px;
+#interests .section-text {
+  z-index: 3; /* Make sure it shows above film/camera if needed */
 }
 
-/* Film image at bottom */
-.film {
-  width: 1400px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
+#interests .section-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--dark-text);
+}
+#interests .section-text p {
+  font-size: 1.3rem;
+  color: var(--dark-text);
+  margin-bottom: 2rem;
 }
 
 .camera {
-  width: 10px;
-  height: auto;
   position: absolute;
-  align-items: center;
-  top: 20%; /* adjust if overlapping film */
+  width: 400px;
+  margin-top: 40px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
-  display: block;
 }
+
+.film {
+  position: absolute;
+  top: 63%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* center on page */
+  width: 1500px;
+  display: block;
+  z-index: 1;
+
+  animation: scrollLeft 10s linear infinite;
+}
+
+.scroll-wrapper {
+  position: absolute;
+  bottom: 23%; /* adjust vertical position */
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.scroll-track {
+  display: flex;
+  width: max-content;
+  animation: scrollLeft 60s linear infinite;
+}
+
+.film {
+  width: 1500px;
+  height: auto;
+  display: block;
+  /* Remove absolute positioning and centering transforms */
+  position: static;
+  transform: none;
+}
+
+
+/* Scroll animation */
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-4500px); /* total width of all film images */
+  }
+}
+
+/* pause scrolling on hover */
+.scroll-wrapper:hover .scroll-track {
+  animation-play-state: paused;
+}
+
 
 /* ==============================
    future Section
@@ -726,25 +789,132 @@ background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  flex-wrap: nowrap; /* keep side-by-side */
+  min-height: 500px; /* ensure enough height */
+}
 
+.left-side {
+  flex: 0 0 48%; /* about half width */
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: var(--light-text);
+  align-items: flex-start;
 }
 
-#contact h2 {
-  color: var(--dark-text);
+.left-side h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
+  color: var(--dark-text);
+  text-align: left;
 }
 
+.left-side p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: var(--dark-text);
+  max-width: 800px;
+  text-align: left;
+}
+
+.social-icons {
+  display: flex;
+  gap: 2rem; /* larger gap */
+  margin-bottom: 2rem;
+}
+
+.social-icon {
+  width: 75px;  /* enlarged icons */
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  object-fit: contain;
+}
+
+.social-icon:hover,
+.social-icon:focus {
+  transform: scale(1.15);
+  outline: none;
+}
+
+.right-side {
+  flex: 0 0 48%; /* about half width */
+}
+
+.custom-google-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 100%;
+}
+
+.custom-google-form label {
+  font-weight: 600;
+  color: var(--dark-text);
+}
+
+.custom-google-form input,
+.custom-google-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.custom-google-form button {
+  background-color: var(--orange);
+  color: white;
+  font-weight: 700;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+}
+
+.custom-google-form button:hover,
+.custom-google-form button:focus {
+  background-color: var(--green);
+  outline: none;
+}
+
+/* Responsive: stack vertically on smaller screens */
+@media (max-width: 900px) {
+  #contact {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .left-side,
+  .right-side {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+/* ==============================
+   Footer
+   ============================== */
 /* Footer */
 footer {
   width: 100vw;
-  padding: 1.5rem;
+  padding: 1rem;
   box-sizing: border-box;
 
   background-color: var(--dark-text);
@@ -757,14 +927,6 @@ footer {
   align-items: center;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 
 /* Typing effect for h3 */
 .typing-effect {
