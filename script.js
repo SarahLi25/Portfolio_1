@@ -1,10 +1,19 @@
 //auto scroll after landing
+window.addEventListener('load', () => {
+    // Wait 3 seconds after page load
+    setTimeout(() => {
+      const aboutSection = document.getElementById('about');
+      if (aboutSection) {
+        aboutSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 3000); // 3000 ms = 3 seconds
+  });
 
 //fade in stars
 
 //carosel for education (DONE)
 
-// Wait for DOM to be fully loaded before accessing elements
+  // Wait for DOM to be fully loaded 
 document.addEventListener('DOMContentLoaded', function() {
     let carousel = document.getElementById('leadership-carousel');
     let btnLeft = document.querySelector('.scroll-btn.left');
@@ -48,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// === Experience Roadmap JS === //
+//  Experience Pizza JS  //
 document.addEventListener('DOMContentLoaded', function() {
     let checkpoints = document.querySelectorAll('.checkpoint');
     let popupBox = document.getElementById('popup-box');

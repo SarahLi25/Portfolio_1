@@ -708,8 +708,6 @@ background-position: center;
   width: 1500px;
   display: block;
   z-index: 1;
-
-  animation: scrollLeft 10s linear infinite;
 }
 
 .scroll-wrapper {
@@ -724,7 +722,7 @@ background-position: center;
 .scroll-track {
   display: flex;
   width: max-content;
-  animation: scrollLeft 60s linear infinite;
+  animation: scrollLeft 120s linear infinite;
 }
 
 .film {
@@ -743,7 +741,7 @@ background-position: center;
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-4500px); /* total width of all film images */
+    transform: translateX(-6000px); 
   }
 }
 
@@ -756,9 +754,10 @@ background-position: center;
 /* ==============================
    future Section
    ============================== */
+
 #future {
   width: 100vw;
-  padding: 6rem 5vw;
+  padding: 6rem 4vw;
   box-sizing: border-box;
   background-image: url(Background/GreenPic6.png);
   background-size: cover;
@@ -781,6 +780,7 @@ background-position: center;
 /* ==============================
    Contact Section
    ============================== */
+   
 #contact {
   width: 100vw;
   padding: 6rem 5vw;
@@ -908,9 +908,7 @@ background-position: center;
   }
 }
 
-/* ==============================
-   Footer
-   ============================== */
+
 /* Footer */
 footer {
   width: 100vw;
