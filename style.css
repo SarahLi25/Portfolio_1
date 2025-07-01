@@ -1,13 +1,11 @@
 /* ========== COLOR VARIABLES ========== */
 :root {
   /* Text Colors */
-  --dark-text: #4B3621;     /* Warm Espresso Brown */
-  --light-text: #765350;   /* Dusty Rose Taupe */
+  --dark-text: #16265c;     /* Warm Espresso Brown */
+  --light-text: #b2b7f6;   /* Dusty Rose Taupe */
 
   /* Accents Colors */
-  --beige: #FDF6EC;          /* Vintage Cream Paper */
-  --green: #A7A77C;     /* Muted Olive Green */
-  --orange: #D8A47F;        /* Soft Burnt Orange */
+  --yellow: #eff799;           
 }
 
 /* Reset and base styles */
@@ -22,7 +20,6 @@ html, body {
 }
 
 body {
-  background-image: url("Background/Bg1.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -146,7 +143,7 @@ section {
 .landing {
   flex-direction: column;
   text-align: center;
-  background-image: url(Background/Bg1.png);
+  background-image: url(Background/Sky1.png);
   background-size: cover;
 background-repeat: no-repeat;
 background-position: center;
@@ -170,6 +167,25 @@ padding: 4rem 5vw;
   color: var(--dark-text);
   margin-bottom: 5rem;
 }
+
+.rotary-phone {
+  animation: shake 0.5s infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
 /* About Section */
 .about {
   display: flex;
@@ -177,7 +193,7 @@ padding: 4rem 5vw;
   padding: 6rem 5vw;
   flex-direction: row-reverse;
   align-items: center;
-  background-image: url(Background/Green2Pic.png);
+  background-image: url(Background/Sky2.png);
   background-size: cover;
 background-repeat: no-repeat;
 background-position: center;
@@ -193,14 +209,14 @@ background-position: center;
   width: 65%;
   margin: 0 auto;
   text-align: left;
-  color: var(--light-text);
+  color: var(--dark-text);
   font-size: 1.3rem;
 
 }
 
 #about .section-image img {
   width: 100%;
-  max-width: 600px;
+  max-width: 500px;
   border-radius: 12px;
   object-fit: cover;
 }
@@ -210,11 +226,10 @@ background-position: center;
   width: 100vw;
   padding: 5rem 4vw;
   box-sizing: border-box;
-  background-image: url(Background/Green3Pic.png);
+  background-image: url(Background//Sky3.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -249,6 +264,7 @@ background-position: center;
   margin-top: 0.5rem;
   line-height: 1.4;
   font-size: 1.3rem;
+  color:var(--dark-text)
 }
 
 #education .section-text ul {
@@ -257,7 +273,7 @@ background-position: center;
 
 #education .section-text p {
   margin-bottom: 0.5rem;
-  color: var(--light-text);
+  color: var(--dark-text);
   font-size: 1.3rem;
 }
 
@@ -266,7 +282,7 @@ background-position: center;
   font-weight: bold;
   font-size: 1.2rem;
   margin-bottom: 15px;
-  color:var(--light-text);
+  color:var(--dark-text);
 }
 
 /* Carousel container hides overflow */
@@ -402,7 +418,7 @@ background-position: center;
   position: relative;
   min-height: 100vh;
   padding: 6rem 5vw 2rem 5vw;
-  background-image: url(Background/Green4pic.png);
+  background-image: url(Background/Sky4.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -539,24 +555,20 @@ background-position: center;
 
 
 /* Overlapping Images */
-.overlap-check {
+.overlap-check img{
   position: absolute;
-  left: 30rem;
-  top: 137rem; /* This is a huge offset, consider better layout */
-  width: 1000px; /* Fixed width matching img */
+  left: 55%;
+  top: 400%; /* This is a huge offset, consider better layout */
   z-index: 10;
-}
-
-.overlap-check img {
   width: 100%;
-  border-radius: 12px;
+  max-width: 500px;
   object-fit: cover;
 }
 
 .overlap-pizza {
   position: absolute;
-  left: 6rem;
-  top: 145rem; /* Very large top offset, ensure page height accommodates */
+  left: 10%;
+  top: 425%;
   width: 400px;
   z-index: 11;
 }
@@ -573,7 +585,7 @@ background-position: center;
   width: 100vw;
   padding: 6rem 5vw;
   box-sizing: border-box;
-  background-image: url(Background/GreenPic5.png);
+  background-image: url(Background/Sky5.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -669,7 +681,7 @@ background-position: center;
   text-align: center;
   height: 100vh;
   position: relative;
-  background-image: url(Background/GreenPic4.png);
+  background-image: url(Background/Sky6.png);
   background-size: cover;
   background-position: center;
   overflow: hidden;
@@ -687,7 +699,7 @@ background-position: center;
 }
 #interests .section-text p {
   font-size: 1.3rem;
-  color: var(--dark-text);
+  color: var(--light-text);
   margin-bottom: 2rem;
 }
 
@@ -759,7 +771,7 @@ background-position: center;
   width: 100vw;
   padding: 6rem 4vw;
   box-sizing: border-box;
-  background-image: url(Background/GreenPic6.png);
+  background-image: url(Background/Sky7.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -771,21 +783,29 @@ background-position: center;
   text-align: center;
 }
 
-#future .section-text,
-#future .section-image {
-  max-width: 800px;
+#future .section-text h2 {
+  margin-top:5px;
+  font-size: 2.5rem;
+  color: var(--light-text);
   text-align: center;
 }
 
+#future .section-text p {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: var(--light-text);
+  max-width: 800px;
+  margin-bottom: 2rem;
+}
 /* ==============================
    Contact Section
    ============================== */
    
 #contact {
   width: 100vw;
-  padding: 6rem 5vw;
+  padding: 6rem 7vw;
   box-sizing: border-box;
-  background-image: url(Background/GreenPic7.png);
+  background-image: url(Background/Sky8.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -810,7 +830,7 @@ background-position: center;
 .left-side h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: var(--dark-text);
+  color: var(--light-text);
   text-align: left;
 }
 
@@ -818,7 +838,7 @@ background-position: center;
   font-size: 1.2rem;
   line-height: 1.6;
   margin-bottom: 2rem;
-  color: var(--dark-text);
+  color: var(--light-text);
   max-width: 800px;
   text-align: left;
 }
@@ -857,7 +877,7 @@ background-position: center;
 
 .custom-google-form label {
   font-weight: 600;
-  color: var(--dark-text);
+  color: var(--light-text);
 }
 
 .custom-google-form input,
@@ -873,8 +893,8 @@ background-position: center;
 }
 
 .custom-google-form button {
-  background-color: var(--orange);
-  color: white;
+  background-color: var(--yellow);
+  color: var(--dark-text);
   font-weight: 700;
   border: none;
   padding: 12px;
@@ -886,7 +906,7 @@ background-position: center;
 
 .custom-google-form button:hover,
 .custom-google-form button:focus {
-  background-color: var(--green);
+  background-color: var(--yellow);
   outline: none;
 }
 
@@ -912,10 +932,10 @@ background-position: center;
 /* Footer */
 footer {
   width: 100vw;
-  padding: 1rem;
+  padding: 8px;
   box-sizing: border-box;
 
-  background-color: var(--dark-text);
+  background-color: var(--light-text);
   color: whitesmoke;
   font-size: 0.9rem;
 
