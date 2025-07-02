@@ -568,7 +568,7 @@ background-position: center;
 .overlap-pizza {
   position: absolute;
   left: 10%;
-  top: 425%;
+  top: 415%;
   width: 400px;
   z-index: 11;
 }
