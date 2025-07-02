@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-//  Experience Pizza JS  //
+//  Experience Pizza JS (DONE) //
 document.addEventListener('DOMContentLoaded', function() {
     let checkpoints = document.querySelectorAll('.checkpoint');
     let popupBox = document.getElementById('popup-box');
@@ -100,6 +100,27 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+//<Magic Ball Popup> (DONE)//
+
+  function revealMessage(text) {
+    let message = document.getElementById("future-message");
+    const ball = document.getElementById("crystal-ball");
+
+    // Set message text and show it
+    message.textContent = text;
+    message.classList.add("show");
+
+    // Trigger shake animation
+    ball.classList.add("shake");
+
+    // Remove shake class after animation
+    setTimeout(() => {
+      ball.classList.remove("shake");
+    }, 500);
+  }
+
+
 
 
 

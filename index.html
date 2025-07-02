@@ -222,17 +222,42 @@
 </section>
 
    <!--futurePage-->
-  <section id="future" class="future">
-    <div class="section-text">
-      <h2>Future Goals</h2>
-      <p>Text</p>
-    </div>
-    <div class="section-image">
-      <img src="placeholder.jpg" alt="Future Image" />
-    </div>
-  </section>
+<section id="future" class="future">
+  <div class="section-text">
+    <h2>Future Goals</h2>
+    <p>Click each icon to reveal a glimpse of my future...</p>
+  </div>
 
-   <!--conatctsPage-->
+  <div class="crystal-ball-area">
+    <!-- Floating message -->
+    <div id="future-message" class="floating-message"></div>
+
+    <!-- Left-side icons -->
+    <div class="icon-group left-icons">
+      <img src="assets/EducationCap.png" class="future-icon" alt="Grad Hat"
+        onclick="revealMessage('Pursue a bachelor and master degree in engineering and finance.')">
+
+      <img src="assets/Globe.png" class="future-icon" alt="Globe"
+           onclick="revealMessage('Learn five languages and Travel across all seven continents.')">
+    </div>
+
+    <!-- Crystal Ball -->
+    <div id="crystal-ball" class="crystal-ball">
+      <img src="https://png.pngtree.com/png-vector/20240201/ourmid/pngtree-halloween-purple-crystal-ball-png-image_11582789.png" alt="Crystal Ball" />
+    </div>
+
+    <!-- Right-side icons -->
+    <div class="icon-group right-icons">
+      <img src="assets/Growth.png" class="future-icon" alt="Growth Chart"
+           onclick="revealMessage('Secure internships aligned with goals in engineering and finance.')">
+      <img src="assets/CodingBrain.png" class="future-icon" alt="Brain"
+           onclick="revealMessage('Learn more coding languages, such as, Python, Java, SQL, Ruby, C++, and more.')">
+    </div>
+  </div>
+</section>
+
+
+   <!--contactsPage-->
 <section id="contact" class="contact">
   <div class="left-side">
     <h2>Contact</h2>

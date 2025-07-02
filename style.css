@@ -768,14 +768,13 @@ background-position: center;
    ============================== */
 
 #future {
-  width: 100vw;
-  padding: 6rem 4vw;
+  width: 100%;
+  padding: 6rem 5vw;
   box-sizing: border-box;
   background-image: url(Background/Sky7.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -784,18 +783,140 @@ background-position: center;
 }
 
 #future .section-text h2 {
-  margin-top:5px;
+  margin-top: 5px;
   font-size: 2.5rem;
-  color: var(--light-text);
+  color: var(--light-text, #ffffff);
   text-align: center;
 }
 
 #future .section-text p {
   font-size: 1.3rem;
   line-height: 1.6;
-  color: var(--light-text);
+  color: var(--light-text, #ffffff);
   max-width: 800px;
   margin-bottom: 2rem;
+}
+
+/* Layout */
+.crystal-ball-area {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+
+.crystal-ball {
+  width: 300px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.crystal-ball img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Icons */
+.icon-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.future-icon {
+  width: 140px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.future-icon:hover {
+  transform: scale(1.1);
+}
+
+.left-icons {
+  align-items: flex-end;
+}
+
+.right-icons {
+  align-items: flex-start;
+}
+
+/* Floating Message */
+.floating-message {
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 10px #e0c3fc,
+    0 0 20px #e0c3fc,
+    0 0 30px #8ec5fc,
+    0 0 40px #8ec5fc;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: 2;
+}
+
+.floating-message.show {
+  opacity: 1;
+  transform: translate(-50%, -20px);
+  animation: shine 8s linear infinite;
+}
+
+/* Shine Animation */
+@keyframes shine {
+  0% {
+    text-shadow:
+      0 0 5px #fff,
+      0 0 10px #e0c3fc,
+      0 0 20px #e0c3fc,
+      0 0 30px #8ec5fc,
+      0 0 40px #8ec5fc;
+  }
+  50% {
+    text-shadow:
+      0 0 10px #fff,
+      0 0 20px #fff,
+      0 0 30px #e0c3fc,
+      0 0 40px #e0c3fc,
+      0 0 50px #8ec5fc;
+  }
+  100% {
+    text-shadow:
+      0 0 2px #bbb,
+      0 0 4px #aab,
+      0 0 8px #99a,
+      0 0 12px #889,
+      0 0 16px #778;
+  }
+}
+
+/* Shake Effect */
+@keyframes shake {
+  0% { transform: rotate(0deg); }
+  20% { transform: rotate(2deg); }
+  40% { transform: rotate(-2deg); }
+  60% { transform: rotate(2deg); }
+  80% { transform: rotate(-2deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.shake {
+  animation: shake 0.5s ease;
 }
 /* ==============================
    Contact Section
